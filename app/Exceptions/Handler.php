@@ -27,4 +27,26 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    
+
+    // public function render($request, Exception $exception)
+    // {
+    //     if ($exception instanceof NotFoundHttpException) {
+    //         return response()->view('errors/404', ['invalid_url' => true], 404);
+    //     }
+
+    //     // if ($exception instanceof TokenMismatchException && Auth::guest()) {
+    //     //     error_log('Error :' . $exception->getMessage());
+    //     //     abort(500);
+    //     // }
+
+
+    //     if ($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException && getenv('APP_ENV') != 'local') {
+    //         error_log('Error :' . $exception->getMessage());
+    //         abort(404);
+    //     }
+
+    //     return parent::render($request, $exception);
+    // }
 }

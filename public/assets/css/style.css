@@ -56,9 +56,9 @@
     --tg-body-font-family: 'Outfit', sans-serif;
     --tg-heading-font-family: 'Plus Jakarta Sans', sans-serif;
     --tg-playfair-font-family: 'Playfair Display', serif;
-    --tg-primary-color: #6721FF;
-    --tg-secondary-color: #00CBFF;
-	--tg-gradient-color: linear-gradient(89.78deg, #C8BDFF -31.69%, #BAA6FF -22.78%, #6721FF 27.93%, #00CBFF 99.79%);
+    --tg-primary-color: #cba328;
+    --tg-secondary-color: #BDB698;
+	--tg-gradient-color: linear-gradient(89.78deg, #AE8625 -31.69%, #F7EF8A -22.78%, #D2AC47 27.93%, #EDC967 99.79%);
     --tg-gradient-color-two: linear-gradient(87.22deg, #C8BDFF -1.82%, #BAA6FF 5.99%, #6721FF 50.47%, #00CBFF 113.5%);
     --tg-gradient-color-three: linear-gradient(89.09deg, #FAEC60 -4.93%, #E5A34B 8.69%, #EE6E4D 20.84%, #F44380 37.75%,
 	 #BE3DB3 52.82%, #7746E6 73.27%, #5A71F1 89.06%, #439EFF 101.36%);;

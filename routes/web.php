@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::view('/login', 'login' );
+Route::view('/signup', 'signup' );
+Route::view('/404', 'errors.notfound' );
