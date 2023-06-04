@@ -11,8 +11,7 @@
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a
-                                            href="/">Home</a>
+                                    <li class="active"><a href="/">Home</a>
                                     </li>
                                     <li><a href="/about">About Us</a></li>
                                     <li class="menu-item-has-children"><a href="#">Others </a>
@@ -25,9 +24,14 @@
                             </div>
                             <div class="header-action d-none d-md-block">
                                 <ul class="list-wrap">
-                                    <li class="header-btn"><a href="/signup" class="btn">sign up</a></li>
+                                    @if (auth()->user())
+                                        <li class="header-btn"><a href="/logout" class="btn">sign out </a></li>
+                                    @else
+                                        <li class="header-btn"><a href="/signup" class="btn">sign up </a></li>
+                                    @endif
                                 </ul>
                             </div>
+
                         </nav>
                     </div>
 

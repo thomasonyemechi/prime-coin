@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,10 @@ Route::get('/', function () {
 Route::view('/login', 'login');
 Route::view('/signup', 'signup');
 Route::view('/404', 'errors.notfound');
+
+Route::post('/create-account', [AuthController::class, 'createAccount'])->name('create-account');
+Route::post('/access-account', [AuthController::class, 'userLogin'])->name('access-account');
+
 
 Route::group(['middleware' => []], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);

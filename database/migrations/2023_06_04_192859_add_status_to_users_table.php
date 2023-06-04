@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_changes', function (Blueprint $table) {
-            $table->id();
-            $table->decimal('price', 4,4);
-            $table->integer('created_by');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('status')->default(1);
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_changes');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };
