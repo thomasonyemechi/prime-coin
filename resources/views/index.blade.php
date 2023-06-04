@@ -25,7 +25,7 @@
                                 reviews.</p>
                             <div class="banner-btn">
                                 <a href="/login" class="gradient-btn wow fadeInLeft" data-wow-delay=".6s">Create Free Account</a>
-                                <a href="work.html" class="gradient-btn gradient-btn-two wow fadeInRight"
+                                <a href="#" class="gradient-btn gradient-btn-two wow fadeInRight"
                                     data-wow-delay=".6s">how {{env('APP_NAME')}} work</a>
                             </div>
                         </div>

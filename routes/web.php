@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::view('/login', 'login' );
-Route::view('/signup', 'signup' );
-Route::view('/404', 'errors.notfound' );
+Route::view('/login', 'login');
+Route::view('/signup', 'signup');
+Route::view('/404', 'errors.notfound');
+
+Route::group(['middleware' => []], function () {
+    // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
+    Route::view('/dashboard', 'users.index');
+});

@@ -71,7 +71,7 @@
     --tg-body-line-height: 1.75;
     --tg-heading-line-height: 1.2;
     --tg-blue: #270A5F;
-    --tg-cetacean-blue: #12032F;
+    --tg-cetacean-blue: #3e3003;
     --tg-indigo: #6610f2;
     --tg-purple: #6f42c1;
     --tg-pink: #d63384;
@@ -82,8 +82,8 @@
     --tg-teal: #20c997;
     --tg-cyan: #00C39A;
     --tg-white: #ffffff;
-    --tg-black: #0D0126;
-    --tg-black-two: #160042;
+    --tg-black: #745c11;
+    --tg-black-two: #493906;
     --tg-black-three: #151515;
     --tg-black-four: #222325;
     --tg-gray: #F1F3FA;
@@ -424,7 +424,7 @@ label {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(267deg, #6721FF 27.93%, #00CBFF 99.79%, #C8BDFF -31.69%, #BAA6FF -22.78%);
+	background: linear-gradient(267deg, #FDE37F 27.93%, #FDEBA3 99.79%, #FDEFB5 -31.69%, #FCDC5A -22.78%);
 	border-radius: 30px;
 	opacity: 0;
 	transition: all 0.5s ease;
@@ -5706,7 +5706,7 @@ label {
 	gap: 15px;
 }
 .footer-social .list-wrap li a {
-	border: 1px solid #251740;
+	border: 1px solid #cba328;
 	border-radius: 5px;
 	width: 40px;
 	height: 40px;
@@ -5720,8 +5720,8 @@ label {
 	background: var(--tg-primary-color);
 }
 .footer-newsletter {
-	background: var(--tg-black);
-	border: 1px solid #251740;
+	background: var(--tg-black); 
+	border: 1px solid #cba328;
 	border-radius: 20px;
 	text-align: center;
 	padding: 35px 28px 40px;
@@ -6088,4 +6088,14 @@ label {
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   };
+}
+
+
+
+.balance-card {
+	background: var(--tg-black); 
+	border: 1px solid #cba328;
+	border-radius: 20px;
+	text-align: left;
+	padding: 35px 28px 20px;
 }

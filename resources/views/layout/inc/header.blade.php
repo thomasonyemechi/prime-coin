@@ -7,7 +7,7 @@
                     <div class="menu-wrap">
                         <nav class="menu-nav">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                <a href="/"><img src="assets/img/logo/logo.png" alt="Logo"></a>
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
@@ -36,7 +36,7 @@
                         <nav class="menu-box">
                             <div class="close-btn"><i class="fas fa-times"></i></div>
                             <div class="nav-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                <a href="/"><img src="assets/img/logo/logo.png" alt="Logo"></a>
                             </div>
                             <div class="menu-outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->

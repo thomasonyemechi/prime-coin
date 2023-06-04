@@ -107,9 +107,9 @@
                             <div class="col-xl-3 col-lg-4 col-md-6">
                                 <div class="footer-widget">
                                     <div class="footer-newsletter">
-                                        <h6 class="title">Join our AI experts community</h6>
+                                        <h6 class="title">Join our community</h6>
                                         <p>Meet and learn from 70k+ creators & companies</p>
-                                        <a href="contact.html" class="btn btn-two">join the community</a>
+                                        <a href="#" class="btn btn-two">join the community</a>
                                     </div>
                                 </div>
                             </div>
@@ -119,14 +119,14 @@
                         <div class="row align-items-center">
                             <div class="col-lg-8">
                                 <div class="copyright-text">
-                                    <p>Copyright © 2023 DEX.AI All rights reserved.</p>
+                                    <p>Copyright © {{date('Y')}} {{ env('APP_NAME') }} All rights reserved.</p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="footer-menu">
                                     <ul class="list-wrap">
-                                        <li><a href="contact.html">Terms & Conditions</a></li>
-                                        <li><a href="contact.html">Refund Policy</a></li>
+                                        <li><a href="#">Terms & Conditions</a></li>
+                                        <li><a href="#">Refund Policy</a></li>
                                     </ul>
                                 </div>
                             </div>
