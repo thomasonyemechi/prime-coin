@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="">
-                            <h2 class="title mb-0 fs-1 ">Hello <span>Solex</span></h2>
+                            <h2 class="title mb-0 fs-1 ">Hello <span>{{ auth()->user()->username }}</span></h2>
                             <p style="display:inline">Welcome To {{ env('APP_NAME') }} </p>
                         </div>
                     </div>
@@ -24,50 +24,86 @@
         <section class="inner-about-area pb-115">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-6 mb-4 ">
-                        <div class="balance-card  ">
-                            <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
-                            <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <div class="user-nav text-white ">
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
+                            <div class="nav-item p-1 hover">
+                                <i class="fa fa-home"> </i>
+                                Dashboard
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-6 mb-4 ">
-                        <div class="balance-card  ">
-                            <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
-                            <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-6 mb-4 ">
-                        <div class="balance-card  ">
-                            <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
-                            <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-6 mb-4 ">
-                        <div class="balance-card  ">
-                            <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
-                            <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="job-item">
-                            <div class="job-content d-md-flex justify-content-between ">
-                                <div class="l-item">
-                                    <a href="job-details.html">
-                                        <div class="rounded-circle bfg-light" >
-                                            <i class="fa fa-paper-plane "></i>
-                                        </div>
-                                        <h6 class="title fs-6">Send Money</h6>
-                                    </a>
+                    <div class="col-lg-9 col-md-8 col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-6 mb-4 ">
+                                <div class="balance-card  ">
+                                    <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
+                                    <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
                                 </div>
-                                {{-- <p>We're looking for an experienced senior softwar engineer to join our team.</p> --}}
-                                {{-- <ul class="list-wrap">
-                                    <li><a href="job-details.html"><i class="far fa-map-marker-alt"></i>Remote</a></li>
-                                    <li><a href="job-details.html"><i class="far fa-clock"></i>Full-time</a></li>
-                                </ul> --}}
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6 mb-4 ">
+                                <div class="balance-card  ">
+                                    <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
+                                    <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6 mb-4 ">
+                                <div class="balance-card  ">
+                                    <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
+                                    <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6 mb-4 ">
+                                <div class="balance-card  ">
+                                    <p class="text-uppercase mb-1" style="font-size: 13px">Coin Balance</p>
+                                    <h2 class="title fs-3 text">2,000 <span style="font-weight:100">pc</span></h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="job-item">
+                                    <div class="job-content d-md-flex justify-content-between ">
+                                        <div class="l-item">
+                                            <a href="job-details.html">
+                                                <div class="rounded-circle bfg-light">
+                                                    <i class="fa fa-paper-plane "></i>
+                                                </div>
+                                                <h6 class="title fs-6">Send Money</h6>
+                                            </a>
+                                        </div>
+                                        {{-- <p>We're looking for an experienced senior softwar engineer to join our team.</p> --}}
+                                        {{-- <ul class="list-wrap">
+                                        <li><a href="job-details.html"><i class="far fa-map-marker-alt"></i>Remote</a></li>
+                                        <li><a href="job-details.html"><i class="far fa-clock"></i>Full-time</a></li>
+                                    </ul> --}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

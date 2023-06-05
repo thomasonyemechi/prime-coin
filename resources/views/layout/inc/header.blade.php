@@ -14,12 +14,19 @@
                                     <li class="active"><a href="/">Home</a>
                                     </li>
                                     <li><a href="/about">About Us</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Others </a>
-                                        <ul class="sub-menu">
-                                            <li><a href="#">Some Others</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="/contact">contacts</a></li>
+
+                                    @if (auth()->user())
+                                        <li class="menu-item-has-children"><a href="#">
+                                            <i class="fa fa-user-alt " ></i>
+                                                {{ auth()->user()->username }} </a>
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Dashboard</a></li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li><a href="#">Make Transfer</a></li>
+                                            </ul>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
                             <div class="header-action d-none d-md-block">

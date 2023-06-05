@@ -107,7 +107,7 @@
                                                 Condition</a> </label>
                                     </div>
                                 </div>
-                                <button type="submit" class="sine-btn">sing in</button>
+                                <button type="submit" class="sine-btn">sign up</button>
                                 <button type="submit" class="google-btn"><img src="assets/img/images/google.png"
                                         alt=""> sign in with google</button>
                                 <span>Already have an account? <a href="/login">Sign In</a> </span>
