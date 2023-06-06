@@ -25,36 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-12">
-                        <div class="user-nav text-white ">
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                            <div class="nav-item p-1 hover">
-                                <i class="fa fa-home"> </i>
-                                Dashboard
-                            </div>
-                        </div>
+                        @include('users.nav')
                     </div>
                     <div class="col-lg-9 col-md-8 col-12">
                         <div class="row">
@@ -103,6 +74,20 @@
                                         <li><a href="job-details.html"><i class="far fa-clock"></i>Full-time</a></li>
                                     </ul> --}}
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table  text-white ">
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Amount</th>
+                                            <th>Description</th>
+                                            <th>Status</th>
+                                            <th>Timestamp</th>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </div>
