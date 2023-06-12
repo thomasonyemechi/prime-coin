@@ -79,7 +79,7 @@
 
                             <div class="col-md-12">
                                 <div class="table-responsive">
-                                    <table class="table  text-white ">
+                                    <table class="table text-white ">
                                         <tr>
                                             <th>S/N</th>
                                             <th>Amount</th>

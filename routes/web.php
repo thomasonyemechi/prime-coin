@@ -31,3 +31,11 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
     Route::view('/dashboard', 'users.index');
 });
+
+
+
+Route::group(['prefix' => 'admin/', 'as' => 'admin.' ,'middleware' => ['auth']], function () {
+    // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
+    Route::view('/dashboard', 'admin.index');
+    Route::view('/manage_user', 'admin.all_users');
+});
