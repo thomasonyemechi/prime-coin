@@ -1,48 +1,8 @@
 <footer>
             <div class="footer-area">
                 <div class="container">
-
-                    <!-- brand-area -->
-                    <div class="brand-area">
-                        <div class="brand-wrap">
-                            <h6 class="title">Trusted by <span>10,000+ marketing</span> teams</h6>
-                            <div class="row brand-active">
-                                <div class="col">
-                                    <div class="brand-item">
-                                        <img src="assets/img/brand/brand_img01.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="brand-item">
-                                        <img src="assets/img/brand/brand_img02.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="brand-item">
-                                        <img src="assets/img/brand/brand_img03.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="brand-item">
-                                        <img src="assets/img/brand/brand_img04.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="brand-item">
-                                        <img src="assets/img/brand/brand_img05.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="brand-item">
-                                        <img src="assets/img/brand/brand_img06.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- brand-area-end -->
-
-                    <div class="footer-top">
+              
+                    {{-- <div class="footer-top">
                         <div class="row">
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                                 <div class="footer-widget">
@@ -114,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="footer-bottom">
                         <div class="row align-items-center">
                             <div class="col-lg-8">

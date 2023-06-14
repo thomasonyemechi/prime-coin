@@ -108,8 +108,6 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="sine-btn">sign up</button>
-                                <button type="submit" class="google-btn"><img src="assets/img/images/google.png"
-                                        alt=""> sign in with google</button>
                                 <span>Already have an account? <a href="/login">Sign In</a> </span>
                             </form>
                         </div>
@@ -119,8 +117,6 @@
                             <div class="login-right-bg" data-background="assets/img/bg/error_bg.jpg"></div>
                             <div class="login-right-content-inner">
                                 <img src="assets/img/images/login_img.png" alt="">
-                                <h4 class="title">Revolutionize your writing: Try <span>AI writer today</span> and
-                                    watch your content soar</h4>
                             </div>
                         </div>
                     </div>

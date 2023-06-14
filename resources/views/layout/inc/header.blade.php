@@ -16,9 +16,12 @@
                                     <li><a href="/about">About Us</a></li>
                                     <li><a href="/contact">contacts</a></li>
 
+                                    @if (!auth()->user())
+                                        <li><a href="/login">Login</a></li>
+                                    @endif
                                     @if (auth()->user())
                                         <li class="menu-item-has-children"><a href="#">
-                                            <i class="fa fa-user-alt " ></i>
+                                                <i class="fa fa-user-alt "></i>
                                                 {{ auth()->user()->username }} </a>
                                             <ul class="sub-menu">
                                                 <li><a href="#">Dashboard</a></li>

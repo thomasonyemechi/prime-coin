@@ -30,6 +30,8 @@ Route::post('/access-account', [AuthController::class, 'userLogin'])->name('acce
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
     Route::view('/dashboard', 'users.index');
+    Route::view('/deposit', 'users.deposit');
+    Route::view('/transfer', 'users.transfer');
 });
 
 
