@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('page_content')
-    <main class="main-content after-login fix">
+    <main class="main-content-two  after-login fix">
         <section class="inner-about-area pb-115">
             <div class="container  ">
                 <div class="row">

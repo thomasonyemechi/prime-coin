@@ -71,11 +71,11 @@
         <div class="main-shape" data-background="assets/img/images/main_shape.png"></div>
 
         <!-- login-area -->
-        <section class="login-area">
+        <section class="login-area about-area-two">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-10">
-                        <div class="login-content">
+                        <div class="login-content  ">
                             <h3 class="title">Create account</h3>
                             <span class="" >Welcome To {{ env('APP_NAME') }}! Please enter your details.</span>
 

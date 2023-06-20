@@ -1,5 +1,5 @@
 <header>
-    <div id="sticky-header" class="menu-area transparent-header">
+    <div id="sticky-header" class="menu-area  menu-area-three transparent-header">
         <div class="container custom-container">
             <div class="row">
                 <div class="col-12">

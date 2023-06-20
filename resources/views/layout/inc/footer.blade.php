@@ -1,5 +1,5 @@
 <footer>
-            <div class="footer-area">
+            <div class="footer-area-three">
                 <div class="container">
               
                     {{-- <div class="footer-top">
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                     </div> --}}
-                    <div class="footer-bottom">
+                    <div class="footer-bottom-three">
                         <div class="row align-items-center">
                             <div class="col-lg-8">
                                 <div class="copyright-text">
