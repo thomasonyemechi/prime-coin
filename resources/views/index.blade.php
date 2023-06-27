@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="about-img-two">
-                                        <img src="assets/img/images/h3_about_img.png" alt="">
+                                        <img src="assets/img/logo.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -131,8 +131,8 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9">
                         <div class="writing-item">
                             <div class="writing-shape">
-                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    x="0px" y="0px" preserveAspectRatio="none">
+                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg" x="0px"
+                                    y="0px" preserveAspectRatio="none">
                                     <g opacity="0.1">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M0 96C0 82 7.5 73 26.2229 76.38C43.8225 79.5573 73.5 62.5 65 34C58.0931 10.8417 68.4854 0.0152226 90.4536 0H387C403.569 0 417 13.4315 417 30V177C417 193.569 403.569 207 387 207H30C13.4315 207 0 193.569 0 177V96Z"
@@ -162,8 +162,8 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9">
                         <div class="writing-item">
                             <div class="writing-shape">
-                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    x="0px" y="0px" preserveAspectRatio="none">
+                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg" x="0px"
+                                    y="0px" preserveAspectRatio="none">
                                     <g opacity="0.1">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M0 96C0 82 7.5 73 26.2229 76.38C43.8225 79.5573 73.5 62.5 65 34C58.0931 10.8417 68.4854 0.0152226 90.4536 0H387C403.569 0 417 13.4315 417 30V177C417 193.569 403.569 207 387 207H30C13.4315 207 0 193.569 0 177V96Z"
@@ -281,38 +281,22 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    
-                                    <div class="counter-item-wrap-three bg-shiba">
-                                        <ul class="list-wrap">
-                                            <li>
-                                                <div class="counter-item-three">
-                                                    <h2 class="count"><span class="odometer" data-count="1"></span>B
-                                                    </h2>
-                                                    <p>Toekns</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="counter-item-three">
-                                                    <h2 class="count"><span class="odometer" data-count="50"></span>K
-                                                    </h2>
-                                                    <p>Social Media Platforms</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="counter-item-three">
-                                                    <h2 class="count"><span class="odometer" data-count="4"></span>K
-                                                    </h2>
-                                                    <p>Powerful AI Tools</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="counter-item-three">
-                                                    <h2 class="count"><span class="odometer" data-count="10"></span>M
-                                                    </h2>
-                                                    <p>Our Readers</p>
-                                                </div>
-                                            </li>
-                                        </ul>
+
+                                    <div class="certificate-wrap">
+                                        <div class="certificate-active">
+                                            <div class="certificate-item">
+                                                <h4 class="count" >Prime Coin</h4>
+                                            </div>
+                                            <div class="certificate-item">
+                                                <h4 class="text-dark" >Prime Coin</h4>
+                                            </div>
+                                            <div class="certificate-item">
+                                                <h4>Prime Coin</h4>
+                                            </div>
+                                            <div class="certificate-item">
+                                                <h4>Prime Coin</h4>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>

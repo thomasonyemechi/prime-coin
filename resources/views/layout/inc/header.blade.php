@@ -7,7 +7,11 @@
                     <div class="menu-wrap">
                         <nav class="menu-nav">
                             <div class="logo">
-                                <a href="/"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                
+                                <a class="d-flex justify-content-between "  href="/">
+                                    <img class="img-fluid" style="width: 30px; height: 30px" src="{{ asset('assets/img/logo.png') }}" alt="Prime Coin">
+                                    <h3 class="mb-0 align-middle ml-3 fw-bold " >PrimeCoin</h3>
+                                </a>
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">

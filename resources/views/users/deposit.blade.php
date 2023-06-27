@@ -17,7 +17,7 @@
                         <div class="comment-respond" style="width: 100%">
                             <h3 class="comment-reply-title">Deposit</h3>
                             <span>Please Make the transfer to the specified wallet and send input the details</span>
-                            <form class="comment-form" action="#">
+                            <form class="comment-form" method="post"  action="{{ route('make_deposit') }}">@csrf
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-grp">
@@ -28,7 +28,7 @@
                                     <div class="col-md-8">
                                         <div class="form-grp">
                                             <label for="text">Your Wallet Address *</label>
-                                            <input type="text" name="wallet_address">
+                                            <input type="text" name="wallet">
                                         </div>
                                     </div>
                                 </div>

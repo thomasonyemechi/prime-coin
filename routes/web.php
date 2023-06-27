@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::view('/dashboard', 'users.index');
     Route::view('/deposit', 'users.deposit');
     Route::view('/transfer', 'users.transfer');
+
+    Route::post('/make_deposit', [TransactionController::class, 'makeDeposit'])->name('make_deposit');
 });
 
 
