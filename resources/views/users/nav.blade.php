@@ -12,6 +12,13 @@
         </div>
     </a>
 
+    <a href="/convert" class="text-white">
+        <div class="nav-item p-1 mb-2 hover">
+            <i class="fa fa-money-check-dollar"></i>
+            Buy Prime Coin
+        </div>
+    </a>
+
     <a href="/transfer" class="text-white">
         <div class="nav-item p-1 mb-2 hover">
             <i class="fa fa-money-bill-wave-alt"> </i>

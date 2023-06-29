@@ -18,7 +18,7 @@
     <link href="{{ asset('admin/libs/tiny-slider/dist/tiny-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/libs/tippy.js/dist/tippy.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 
 
@@ -26,6 +26,12 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/theme.min.css') }}">
     <title>Dashboard | Geeks - Bootstrap 5 Admin Dashboard Template</title>
+
+    <style>
+        .al_bg {
+            background: linear-gradient(to right, #b04300, #ff0000) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,6 +43,18 @@
                 @include('layout.inc.admin_nav')
             </div>
             @yield('page_content')
+
+
+            @if ($errors->any())
+                <div id="refresh" class="alert al_bg" style="position:fixed; top:10px; right:10px; z-index:10000; width: auto;">
+                <i class="text-white" >
+                    @foreach ($errors->all() as $error)
+                        {{ $error }} <br />
+                    @endforeach
+                    </i>
+                </div>
+            @endif
+
         </div>
     </div>
     <!-- Script -->
@@ -69,6 +87,7 @@
     <script src="{{ asset('admin/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('admin/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 
 
@@ -77,6 +96,52 @@
 
 
     <script src="{{ asset('admin/js/theme.min.js') }}"></script>
+
+
+    @if (session('error'))
+        <script>
+            Toastify({
+                text: "<?= session('error') ?>",
+                duration: 5000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #b04300, #ff0000)",
+                },
+            }).showToast();
+        </script>
+    @endif
+
+
+    @if (session('success'))
+        <script>
+            Toastify({
+                text: "<?= session('success') ?>",
+                duration: 5000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #01ff01)",
+                },
+            }).showToast();
+        </script>
+    @endif
+
+
+    <script>
+        $(function() {
+            setTimeout(() => {
+                $('#refresh').hide('slow');
+            }, 5000);
+        })
+    </script>
+
+
+    @stack('scripts')
 </body>
 
 

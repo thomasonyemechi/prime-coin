@@ -622,6 +622,11 @@
     content: "\f2a2"
 }
 
+
+.fa-money-check-dollar:before {
+    content: "\f53d"
+}
+
 .fa-asterisk:before {
     content: "\f069"
 }

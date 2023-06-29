@@ -8,21 +8,55 @@
         <!-- Navbar nav -->
         <ul class="navbar-nav flex-column" id="sideNavbar">
             <li class="nav-item">
-                <a class="nav-link  " href="/admin/dashboard" >
+                <a class="nav-link  " href="/admin/dashboard">
                     <i class="nav-icon fe fe-home me-2"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/manage_user" >
+                <a class="nav-link" href="/admin/manage_user">
                     <i class="nav-icon fe fe-users me-2"></i> Manage Users
                 </a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link  " href="/admin/dashboard0" >
-                    <i class="nav-icon fe fe-coin me-2"></i> Fund Deopsit
+                <a class="nav-link  collapsed " href="#!" data-bs-toggle="collapse" data-bs-target="#navCourses"
+                    aria-expanded="false" aria-controls="navCourses">
+                    <i class="nav-icon fe fe-book me-2"></i> Manage Deposit
+                </a>
+                <div id="navCourses" class="collapse " data-bs-parent="#sideNavbar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin/deposit/history">
+                                Deposits History
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin/deposit/pending">
+                                Pending Deposit
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin/deposit/approved">
+                                Approved Deposits
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin/deposit/rejected">
+                                Rejected Deposits
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link  " href="/admin/set_price">
+                    <i class="nav-icon fe fe-settings me-2"></i> Set Coin Price
                 </a>
             </li>
-            
+
         </ul>
 
     </div>

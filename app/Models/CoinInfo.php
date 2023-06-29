@@ -10,4 +10,5 @@ class CoinInfo extends Model
     use HasFactory;
 
     protected $guarded;
+    protected $table = 'coin_info';
 }

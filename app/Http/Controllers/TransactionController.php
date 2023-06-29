@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CoinInfo;
 use App\Models\Deposit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,16 +11,17 @@ class TransactionController extends Controller
 {
     function makeDeposit(Request $request)
     {
+
         Validator::make($request->all(), [
-            'amount' => 'integer|required|min:2',
-            'wallet' => 'string|required|min:10'
+            'amount' => 'required|integer|min:2',
+            'wallet' => 'required|string|min:10'
         ])->validate();
 
         //first check for pending transactions.....
         $check = Deposit::where(['user_id' => auth()->user()->id, 'status' => 'pending'])->count();
-        if($check > 0) {
-            return back()->with('error', 'You have a pending transaction, wait till it is resolved');
-        }
+        // if($check > 0) {
+        //     return back()->with('error', 'You have a pending transaction, wait till it is resolved');
+        // }
         
         Deposit::create([
             'user_id' => auth()->user()->id,
@@ -41,4 +43,12 @@ class TransactionController extends Controller
     {
         
     }
+
+
+
+    function fetchCoinPriceApi()
+    {
+        return response(CoinInfo::first());
+    }
+
 }

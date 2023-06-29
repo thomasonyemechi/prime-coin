@@ -3,7 +3,7 @@
 @section('page_content')
     <main class="main-content-two  after-login fix">
         <section class="inner-about-area pb-115">
-            <div class="container  ">
+            <div class="container">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-12">
                         @include('users.head')
@@ -15,39 +15,39 @@
                     </div>
                     <div class="col-lg-9 col-md-8 col-12">
                         <div class="comment-respond" style="width: 100%">
-                            <h3 class="comment-reply-title">Deposit</h3>
-                            <span>Please Make the transfer to the specified wallet and send input the details</span>
+                            <h3 class="comment-reply-title">Buy Prime Coin</h3>
+                            <span>Convert Your USDT to get prime coin (PC)</span>
 
                             {!! dropError() !!}
 
                             <form class="comment-form" method="post" action="{{ route('make_deposit') }}">@csrf
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-grp">
-                                            <label for="amount">Amount *</label>
-                                            <input type="number" name="amount" value="{{ old('amount') }}" >
+                                            <label for="amount">Amount In PC</label>
+                                            <input type="number" name="pc" id="pc" value="{{ old('amount') }}">
                                             @error('amount')
                                                 <i class="text-danger  ">{{ $message }} </i>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <div class="form-grp">
-                                            <label for="text">Your Wallet Address *</label>
-                                            <input type="text" name="wallet" value="{{ old('wallet') }}" >
+                                            <label for="text"> Amount In USDT </label>
+                                            <input type="text" name="usdt" id="usdt" value="{{ old('wallet') }}">
                                             @error('wallet')
                                                 <i class="text-danger ">{{ $message }} </i>
                                             @enderror
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn">make Deposit</button>
+                                <button type="submit" class="btn">Convert To PC</button>
                             </form>
                         </div>
 
 
 
-                        <div class="comment-respond mt-4" style="width: 100%">
+                        {{-- <div class="comment-respond mt-4" style="width: 100%">
                             <h3 class="comment-reply-title"> Deposit History</h3>
                             <div class="table-responsive">
                                 <table class="table text-white ">
@@ -73,7 +73,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                     </div>
@@ -84,3 +84,43 @@
 
     </main>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function() {
+
+            $('#pc').on('keyup', function() {
+                pc = $('#pc');
+                usdt = $('#usdt');
+                coin = parseInt(pc.val());
+                $.ajax({
+                    method: 'get',
+                    url: '/get_price'
+                }).done(function(res) {
+                    price = coin/res.price
+                    usdt.val(price)
+                }).fail(function(res) {
+                    console.log(res);
+                })
+            })
+
+
+            $('#usdt').on('keyup', function() {
+                pc = $('#pc');
+                usdt = $('#usdt');
+                coin = parseInt(usdt.val());
+                $.ajax({
+                    method: 'get',
+                    url: '/get_price'
+                }).done(function(res) {
+                    price = coin*res.price
+                    price = (price == NaN) ? 0 : price;
+                    pc.val(price)
+                }).fail(function(res) {
+                    console.log(res);
+                })
+            })
+
+        })
+    </script>
+@endpush

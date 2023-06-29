@@ -17,8 +17,8 @@
                                 <ul class="navigation">
                                     <li class="active"><a href="/">Home</a>
                                     </li>
-                                    <li><a href="/about">About Us</a></li>
-                                    <li><a href="/contact">contacts</a></li>
+                                    <li><a href="#">Prime Community</a></li>
+                                    <li><a href="#">Safety Guide</a></li>
 
                                     @if (!auth()->user())
                                         <li><a href="/login">Login</a></li>
@@ -28,7 +28,7 @@
                                                 <i class="fa fa-user-alt "></i>
                                                 {{ auth()->user()->username }} </a>
                                             <ul class="sub-menu">
-                                                <li><a href="#">Dashboard</a></li>
+                                                <li><a href="/dashboard">Dashboard</a></li>
                                                 <li><a href="#">Profile</a></li>
                                                 <li><a href="#">Make Transfer</a></li>
                                             </ul>

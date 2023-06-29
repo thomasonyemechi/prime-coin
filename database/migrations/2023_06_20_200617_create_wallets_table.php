@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('ref_id');
             // currency is either 1 USDT 2 PC 3 SPC
-            $table->integer('currency');
-            $table->decimal('ammount', 8,4);
+            $table->string('currency');
+            $table->decimal('amount', 8,4);
             // transaction type is either deposit transfer or earning
             $table->integer('type');
             $table->string('remark')->nullable();

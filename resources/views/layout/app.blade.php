@@ -77,6 +77,16 @@
     <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
     <script src="{{ asset('assets/js/wow.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+
+    <script>
+        $(function() {
+            setTimeout(() => {
+                $(".val_err").hide('slow');
+            }, 5000);
+        })
+    </script>
+    @stack('scripts')
 </body>
 
 </html>

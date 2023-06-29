@@ -9,10 +9,18 @@ use Illuminate\Support\Facades\Validator;
 
 class SettingsController extends Controller
 {
+    function setPriceIndex() 
+    {
+        $coin = CoinInfo::first();
+        $price_changes = PriceChange::with(['user:id,username'])->orderby('id', 'desc')->limit(25)->get();
+        return view('admin.set_price', compact(['coin', 'price_changes']));
+    }
+
+
     function updateCoinPrice(Request $request)
     {
         Validator::make($request->all(), [
-            'price' => 'float|required'
+            'price' => 'required'
         ])->validate();
 
         $coin_info = CoinInfo::first();
@@ -23,7 +31,7 @@ class SettingsController extends Controller
         
         $this->logCoinPriceChange($request->price);
 
-        return back()->with('success', 'Coin Value has Been Updated Sucessfuly');
+        return back()->with('success', 'Coin price has been Updated');
     }
 
 
@@ -34,4 +42,24 @@ class SettingsController extends Controller
             'created_by' => auth()->user()->id
         ]);
     }
+
+
+
+    // public function setCoinPrice(Request $request)
+    // {
+    //     $val = Validator::make($request->all(), [
+    //         'price' => 'required'
+    //     ]);
+
+    //     PriceChange::create([
+    //         'price' => $request->price,
+    //         'created_by' => auth()->user()->id
+    //     ]);
+
+    //     return back()->with('success', 'Coin price has been updated scuessfuly');
+    // }
+
+
+
+    
 }
