@@ -30,6 +30,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/create-account', [AuthController::class, 'createAccount'])->name('create-account');
 Route::post('/access-account', [AuthController::class, 'userLogin'])->name('access-account');
 Route::get('/get_price', [TransactionController::class, 'fetchCoinPriceApi']);
+Route::view('/prime/info', 'info' );
 
 
 Route::group(['middleware' => ['auth']], function () {

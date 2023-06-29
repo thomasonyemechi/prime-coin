@@ -25,7 +25,7 @@
                             <div class="banner-btn">
                                 <a href="/login" class="gradient-btn wow fadeInLeft" data-wow-delay=".6s">Create Free
                                     Account</a>
-                                <a href="#" class="gradient-btn gradient-btn-two wow fadeInRight"
+                                <a href="/prime/info" class="gradient-btn gradient-btn-two wow fadeInRight"
                                     data-wow-delay=".6s">how {{ env('APP_NAME') }} work</a>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                     cryptocurrency, banks are not needed to very transactions or payment. When you transfer
                                     cryptocurrencies, the transactions are recorded in a public ledger. Cryptocurrency is
                                 </p>
-                                <a href="#" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
+                                <a href="/prime/info#idea" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                     to develop more efficient reward and promotion strategies to stand out from competitors
                                     especially for newly developed crypto projects. Instead of spending huge amount in
                                 </p>
-                                <a href="#" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
+                                <a href="/prime/info#airdrop" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                                     the other 50% is used to purchase more prime coin for you automatically. This way you
                                     accumulate more prime coin while you earn rewards.
                                 </p>
-                                <a href="work.html" class="link-btn">See More<i class="far fa-arrow-right"></i></a>
+                                <a href="/prime/info#reward_margin" class="link-btn">See More<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                                     records called
                                     major blocks and these blocks are linked using cryptography.
                                 </p>
-                                <a href="#" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
+                                <a href="/prime/info#mining" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
