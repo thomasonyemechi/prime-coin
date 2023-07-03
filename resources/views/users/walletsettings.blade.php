@@ -12,9 +12,6 @@
                     </div>
                     <div class="card-body">
                         <div class="alert alert-solid alert-primary d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24">
-                                <use xlink:href="#info-fill2" />
-                            </svg>
                             <div>
                                 <b>Note:</b> you can only update your wallet address once in a week
                             </div>
@@ -23,10 +20,11 @@
                         <form>
                             <div class="form-group">
                                 <label class="form-label" for="email">New Wallet Address:</label>
-                                <input type="email" class="form-control" id="email1">
+                                <input type="text" class="form-control" name="waller_adress">
                             </div>
-                            <button type="submit" class="btn btn-primary rounded">Submit</button>
-                            <button type="submit" class="btn btn-danger rounded">cancel</button>
+                            <div class="d-flex justify-content-end" >
+                                <button type="submit" class="btn btn-primary rounded">Update</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -37,20 +35,13 @@
                         <div class="caption">
                             <h4 class="font-weight-bold mb-2">Wallet Update History</h4>
                         </div>
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#depositModal">Deposit USDT</button>
-                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table data-table mb-0">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Description</th>
+                                        <th scope="col">Address</th>
                                         <th scope="col">Timestamp</th>
                                     </tr>
                                 </thead>

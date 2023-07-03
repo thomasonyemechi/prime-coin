@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deposit;
+use App\Models\User;
 use App\Models\Wallet;
+use App\Models\WalletAddress;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -23,5 +27,22 @@ class UserController extends Controller
     function walletSettingIndex()
     {
         return view('users.walletsettings');
+    }
+
+
+    function updateWallet(Request $request)
+    {
+        $val = Validator::make($request->all(), [
+            'wallet_address' => 'required|string'
+        ])->validate();
+
+        $wal = WalletAddress::create([
+            'user_id' => auth()->user()->id,
+            'wallet' => $request->wallet_address
+        ]);
+
+        User::where('id', auth()->user()->id)->update([
+            'wallet' => $wal->wallet_address
+        ]);
     }
 }
