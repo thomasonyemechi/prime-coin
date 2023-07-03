@@ -1,4 +1,4 @@
-<div class="user-nav  d-none d-md-block mb-3 text-white ">
+<div class="user-nav  d-none d-md-block mb-3 text-white " id="navuser">
     <a href="/dashboard" class="text-white">
         <div class="nav-item p-1 mb-2 hover">
             <i class="fa fa-home"> </i>

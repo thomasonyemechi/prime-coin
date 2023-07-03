@@ -19,4 +19,9 @@ class UserController extends Controller
         $transactions = Wallet::where(['user_id' => auth()->user()->id ])->orderby('id', 'desc')->limit(10)->get();
         return view('users.index', compact('transactions'));
     }
+
+    function walletSettingIndex()
+    {
+        return view('users.walletsettings');
+    }
 }

@@ -1,335 +1,803 @@
-@extends('layout.app')
+<!DOCTYPE html>
+<html>
 
-@section('page_content')
-    <main class="main-content fix">
-        <div class="noise-bg" data-background="assets/img/bg/noise_bg.png"></div>
-        <div class="main-shape" data-background="assets/img/images/main_shape.png"></div>
+<head>
+    <meta charset="utf-8">
+    <!-- Responsive Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- favicon & bookmark -->
 
-        <!-- banner-area -->
-        <section class="banner-area-three ">
+    <link rel="shortcut icon" href="images/favi-icon.ico" type="image/x-icon" />
+
+    <!-- Website Title -->
+    <title>Prime Coin</title>
+    <!-- Stylesheets Start -->
+    <link rel="stylesheet" href="{{ asset('main/css/fontawesome.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/bootstrap.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/animate.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/fancybox/jquery.fancybox.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/owl.carousel.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/slick.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/my-style2.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/responsive2.css') }}" type="text/css" />
+</head>
+
+<body>
+
+    <!--Main Wrapper Start-->
+    <div class="wrapper" id="top">
+        <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="banner-content ta-animated-headline">
-                            <h2 class="title ah-headline wow fadeInUp" data-wow-delay=".2s"><span>Finally a broader yet
-                                    simple vision for web3 is here
-                            </h2>
-                            <h2 class="title d-none wow fadeInUp" data-wow-delay=".2s">Finally a broader yet simple vision
-                                for web3 is here</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".4s">After several years of work and commitment to
-                                building a truly
-                                decentralized internet project, payment network and blockchain protocol, the award winning
-                                tokenomics team
-                                created prime coin primarily as a utility token for the prime ecosystem with
-                                vast applications on numerous platforms with an ICO of 1,200,000,000 tokens</p>
-                            <div class="banner-btn">
-                                <a href="/login" class="gradient-btn wow fadeInLeft" data-wow-delay=".6s">Create Free
-                                    Account</a>
-                                <a href="/prime/info" class="gradient-btn gradient-btn-two wow fadeInRight"
-                                    data-wow-delay=".6s">how {{ env('APP_NAME') }} work</a>
+                    <div class="col-sm-6 col-md-4 logo">
+                        {{-- <a href="/" title="Prime Coin">
+                        <img class="white" src="{{ asset('main/images/section-1/w-logo.png') }}" alt="Prime Coin">
+                        <img class="black" src="{{ asset('main/images/section-1/b-logo.png') }}" alt="Prime Coin">
+                    </a> --}}
+                    </div>
+                    <div class="col-sm-6 col-md-8 main-menu">
+                        <div class="menu-icon" style="display: block">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
+                        </div>
+                        <nav class="onepage">
+                            <ul>
+                                <li class="active"><a href="#top">Home</a></li>
+                                <li><a href="#about">About ico</a></li>
+                                <li><a href="#token">token</a></li>
+                                <li><a href="#roadmap">roadmap</a></li>
+                                <li class="nav-btn"><a href="/login">Sign In</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="midd-container">
+
+            <div class="main coinpool-layout white-sec"
+                style="background-image:url({{ asset('main/images/section-1/section-1-banner.jpg') }});">
+                <div class="container">
+                    <div class="row row-reverse align-items-center">
+                        <div class="col-sm-12 col-md-6" data-wow-delay="0.5s">
+                            <div class="coinpool-animation">
+                                <div class="platinum-move-1"></div>
+                                <div class="platinum-move-2"></div>
+                                <div class="platinum-move-3"></div>
+                                <div class="platinum-move-4"></div>
+                                <div class="platinum-move-5"></div>
+                                <div class="top-part">
+                                    <div class="coin-icon"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 mobile-center">
+                            <h1 class="text-white d-sm-block-none ">A broader, simple vision for web3 <span> is
+                                    here!</span></h1>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mauris
+                                bibendum, tincidunt mauris at, tempor nunc.</p>
+                            <div class="hero-btns">
+                                <a href="#" class="btn">Buy PrimeCoin</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="about-section c-l p-tb" id="about">
 
-        </section>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <img src="{{ asset('main/images/section-3/sec-3-img1.png') }}" alt="about">
+                        </div>
+                        <div class="col-md-6 about-left">
+                            <h2 class="section-heading">About <span>Prime Coin</span></h2>
+                            <h5>Finally a broader yet simple vision for web3 is here</h5>
+                            <p>
+                                After several years of work and commitment to building a truly decentralized internet
+                                project, payment network and blockchain protocol, the award winning tokenomics team
+                                created prime coin primarily as a utility token for the
+                                prime ecosystem with vast applications on numerous platforms with an ICO of
+                                1,200,000,000 tokens.
+                            </p>
 
+                            <p>
+                                The prime coin can also be used to invest in ICOs that are listed through several
+                                launchpad programs and also in the marketplace of new cryptocurrencies
+                            </p>
 
+                        </div>
 
+                    </div>
+                </div>
+            </div>
 
-
-
-
-        <section class="speech-area pb-5 pt-5 mt-0  ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="about-content-wrap">
-                            <div class="section-title-three mb-50 title-animation">
-                                <h2 class="title fs-1  ">The usuage exceeds the scope of the prime ecosystem but not limited
-                                    to
-                                    the following</h2>
+            <div class="mobileapp-section p-tb black-bg white-sec">
+                <div class="container">
+                    <div class="row align-items-center flex-row-reverse">
+                        <div class="col-lg-5">
+                            <div class="iphone-img">
+                                <img src="{{ asset('main/images/logo.png') }}" alt="">
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="about-content-two">
-                                        <p>
-                                            Prime coin has achieved massive support and partnership from other organisations
-                                            and institutions to help it's utility spread.
+                        </div>
+                        <div class="col-lg-7">
+                            <h3 class="section-heading">The usuage exceeds the scope of the prime ecosystem but not
+                                limited to the following</h3>
+                            <p>Prime coin has achieved massive support and partnership from other organisations and
+                                institutions to help it's utility spread. The prime coin is also used primarily to pay
+                                transaction and trading fees on the prime ecosystem.</p>
+                            <div class="button-wrapper">
+                                <ul>
+                                    <li>Making investments.</li>
+                                    <li>Making payments and process investments.</li>
+                                    <li>Donate to charity and liquidity for community development.</li>
+                                    <li>Payment for local and international flights on designated platforms and third
+                                        party organisations.</li>
+                                    <li>Connecting blockchain based smart contracts with external data and stock prices.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-                                            The prime coin is also used primarily to pay transaction and trading fees on the
-                                            prime ecosystem.
-                                        </p>
-                                        <ul class="list-wrap">
-                                            <li><i class="far fa-hand-point-right"></i>Making investments.</li>
-                                            <li><i class="far fa-hand-point-right"></i>Making payments and process
-                                                investments.</li>
-                                            <li><i class="far fa-hand-point-right"></i>Donate to charity and liquidity for
-                                                community development. </li>
-                                            <li><i class="far fa-hand-point-right"></i>Payment for local and international
-                                                flights on designated platforms and third party organisations. </li>
-                                            <li><i class="far fa-hand-point-right"></i> Connecting blockchain based smart
-                                                contracts with external data and stock prices.</li>
-                                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-product-sec p-tb white-sec dark-gray-bg-tone-2" id="featured-product">
+                <div id="gold-tech-bg"></div>
+                <div class="container">
+                    <div class="sec-title text-center">
+                        <h3>Benefits of Using Our Solution</h3>
+                    </div>
+                    <div class="sub-txt text-center">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut
+                            quis blandit dolor. Ut laoreet sagittis arcu eu tristique. </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="benefits-boxes row">
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-1.png') }}" alt="Read Time Update">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Circulating Supply <br><small>1,000,000,000 PMC</small> </h3>
+                                    <p>
+                                        With a significantly high quantity of token been produced and made actively
+                                        available for the market, primecoin project becomes the first 100% participant
+                                        driven community
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-2.png') }}" alt="Cloud Based">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Market Cap Vision <br><small>$30,000,000,000</small></h3>
+                                    <p>
+                                        With the first major block of primecoin distribution been reserved for Pre-Sale,
+                                        this will help price quickly skyrockets after the pre-sale duration is over.
+                                        Hence this vision is possible few years from now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-3.png') }}" alt="No transaction fees">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Airdrop Supply <br><small>200,000,000 PMC.</small></h3>
+                                    <p>
+                                        Our participants are our major influencers, tell your friends about primecoin
+                                        and earn an instantly withdrawable 20% of any purchase they make.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-4.png') }}" alt="Instant operations">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Minimum Purchase <br><small>$20</small></h3>
+                                    <p>
+                                        With $20, you can simply buy your future now that it is cheap, everyone deserves
+                                        to know about this opportunity including children.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-5.png') }}" alt="Strong teams & Advisors">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Maximum Purchase <br><small>$15,000</small></h3>
+                                    <p>
+                                        No single member is given a huge autonomy over the project. You cannot purchase
+                                        primecoin with more than $15000 at the current price until later period when
+                                        only smaller blocks are available.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-6.png') }}" alt="Protects the identity">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Recommended Wallet <br><small>Trust Wallet</small></h3>
+                                    <p>
+                                        The most recommended wallet for accessing the primecoin ecosystem is Trust
+                                        Wallet. Ensure you keep your recovery phrase safe and do not share with anyone
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-6.png') }}" alt="Protects the identity">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>ICO Participants <br> <small>370,000+</small></h3>
+                                    <p>
+                                        Public institutions, retails investors and community members all over the world
+                                        can use fiat currencies or other digital currencies to participate in the sale.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-6.png') }}" alt="Protects the identity">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Launch Pre-Sale Price <br><small>$.10</small></h3>
+                                    <p>
+
+                                        Lucky participants all over the world get the golden opportunity to accumulate
+                                        primecoin at an extremely affordable price before an advertised general public
+                                        Sale
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-6.png') }}" alt="Protects the identity">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Pre-Sale Pool Duration <br><small>3 Months+</small></h3>
+                                    <p>
+                                        The pre-sale pool duration is expected to be about three months to allow more
+                                        participants purchase at a low price. These duration can change at any moment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="bf-image">
+                                    <img src="{{ asset('main/images/icon-6.png') }}" alt="Protects the identity">
+                                </div>
+                                <div class="bf-details">
+                                    <h3>Pre-Sale Block Supply <br><small>500,000,000 PMC</small> </h3>
+                                    <p>
+                                        This quantity of primecoin is exclusively reserved for Presale, once distributed
+                                        entirely, the lowest purchase price of primecoin becomes $0.2
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap-sec p-tb mercury-layout" id="roadmap">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading">Road Map</h2>
+                    </div>
+                    <div class="sub-txt text-center">
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus
+                            tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique.</p>
+                    </div>
+                    <div class="mercury-roadmap owl-carousel">
+                        <div class="roadmap-item odd">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">Crypto ICO Platform idea</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>March 2021</h4>
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item even">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">ICO Realease</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>January 2021</h4>
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item odd">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">Technical development</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>December 2020</h4>
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item even">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">Development kit for integrations</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>October 2020</h4>
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item odd">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">Beta version of crypto ICO</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>eptember 2020</h4>
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-product-sec p-tb white-sec dark-gray-bg-tone-2" id="featured-product">
+                <div id="gold-tech-bg"></div>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinPriceBlock.js"></script>
+                        <div id="coinmarketcap-widget-coin-price-block" coins="1,1027,825,1839,3890,2,1831,5426"
+                            currency="USD" theme="light" transparent="false" show-symbol-logo="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="token-sale p-tb" id="token">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-6  pt-5 wow zoomIn">
+                            <div class="sec-title text-center">
+                                <h3>Token Distribution</h3>
+                            </div>
+                            <div class="col-md-6 wow zoomIn">
+                                <div class="sale-chart-view">
+                                    <div class="doughnut">
+                                        <div class="doughnutChartContainer">
+                                            <canvas id="doughnutChart" height="270"></canvas>
+                                        </div>
+                                        <div id="legend" class="chart-legend"></div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="about-img-two">
-                                        <img src="assets/img/logo.png" alt="">
-                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="col-sm-12 pt-5">
+                                <h2 class="section-heading">Currency Convertor</h2>
+                                <div class="sub-txt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
+                                        ultrices. Ut quis blandit dolor. Ut Vestibulum ante ipsum primis in fauc</p>
+                                </div>
+                            </div>
+
+                            <div class="currency-box text-center">
+                                <div class="currency-icon">
+                                    <img src="{{ asset('main/images/section-6/convert-icon.png') }}"
+                                        alt="World Coverage" style="">
+                                </div>
+                                <div class="currency-form">
+                                    <form method="" action="#">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" id=""
+                                                placeholder="Enter Amount">
+                                            <input type="text" class="form-control postpend" name=""
+                                                readonly="" value="USDT">
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" id=""
+                                                placeholder="Enter Amount">
+                                            <input type="text" class="form-control postpend" name=""
+                                                readonly="" value="PC">
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </section>
 
-
-
-
-
-
-
-        <section class="about-area-two pt-120">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9">
-                        <div class="writing-item">
-                            <div class="writing-shape">
-                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                    y="0px" preserveAspectRatio="none">
-                                    <g opacity="0.1">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0 96C0 82 7.5 73 26.2229 76.38C43.8225 79.5573 73.5 62.5 65 34C58.0931 10.8417 68.4854 0.0152226 90.4536 0H387C403.569 0 417 13.4315 417 30V177C417 193.569 403.569 207 387 207H30C13.4315 207 0 193.569 0 177V96Z"
-                                            fill="currentcolor" />
-                                        <path
-                                            d="M26.2229 76.38L26.0452 77.3641L26.0452 77.3641L26.2229 76.38ZM65 34L64.0417 34.2858L65 34ZM90.4536 0L90.4536 -1L90.4529 -1L90.4536 0ZM26.4005 75.3959C16.8849 73.6781 9.9765 75.0628 5.4433 78.9101C0.915622 82.7526 -1 88.8465 -1 96H1C1 89.1535 2.83438 83.7474 6.73743 80.4349C10.6349 77.1272 16.838 75.7019 26.0452 77.3641L26.4005 75.3959ZM64.0417 34.2858C68.1618 48.1001 63.0533 59.0984 54.7432 66.3139C46.3758 73.5791 34.8545 76.9221 26.4005 75.3959L26.0452 77.3641C35.1909 79.0152 47.3082 75.4182 56.0544 67.8241C64.858 60.1802 70.3382 48.3998 65.9583 33.7142L64.0417 34.2858ZM90.4529 -1C79.3517 -0.992307 70.8799 1.74143 66.1176 7.69682C61.3388 13.673 60.5475 22.57 64.0417 34.2858L65.9583 33.7142C62.5456 22.2717 63.4971 14.1764 67.6796 8.94589C71.8788 3.69466 79.5873 1.00753 90.4543 1L90.4529 -1ZM90.4536 1H387V-1H90.4536V1ZM387 1C403.016 1 416 13.9837 416 30H418C418 12.8792 404.121 -1 387 -1V1ZM416 30V177H418V30H416ZM416 177C416 193.016 403.016 206 387 206V208C404.121 208 418 194.121 418 177H416ZM387 206H30V208H387V206ZM30 206C13.9837 206 1 193.016 1 177H-1C-1 194.121 12.8792 208 30 208V206ZM1 177V96H-1V177H1Z"
-                                            fill="currentcolor" />
-                                    </g>
-                                </svg>
+            <div class="hero-main white-sec ">
+                <div id="gold-tech-bg"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 hero-caption wow fadeIn text-center">
+                            <div class="sec-title text-center">
+                                <h1>Token Sales</h1>
                             </div>
-                            <div class="writing-icon">
-                                <i class="far fa-chart-line"></i>
-                            </div>
-                            <div class="writing-content">
-                                <h4 class="title">THE PRIME STRATEGY - THE IDEA</h4>
-                                <p class="home-ar">
-                                    Cryptocurrency is any form of currency that exists virtually or digitally and uses
-                                    cryptography to secure transactions. One of the most secured technologies ever created
-                                    is the blockchain technology which makes it difficult for hackers to corrupt. In
-                                    cryptocurrency, banks are not needed to very transactions or payment. When you transfer
-                                    cryptocurrencies, the transactions are recorded in a public ledger. Cryptocurrency is
-                                </p>
-                                <a href="/prime/info#idea" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
-                            </div>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu
+                                mauris
+                                bibendum, tincidunt mauris at, tempor nunc.</p>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9">
-                        <div class="writing-item">
-                            <div class="writing-shape">
-                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                    y="0px" preserveAspectRatio="none">
-                                    <g opacity="0.1">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0 96C0 82 7.5 73 26.2229 76.38C43.8225 79.5573 73.5 62.5 65 34C58.0931 10.8417 68.4854 0.0152226 90.4536 0H387C403.569 0 417 13.4315 417 30V177C417 193.569 403.569 207 387 207H30C13.4315 207 0 193.569 0 177V96Z"
-                                            fill="currentcolor" />
-                                        <path
-                                            d="M26.2229 76.38L26.0452 77.3641L26.0452 77.3641L26.2229 76.38ZM65 34L64.0417 34.2858L65 34ZM90.4536 0L90.4536 -1L90.4529 -1L90.4536 0ZM26.4005 75.3959C16.8849 73.6781 9.9765 75.0628 5.4433 78.9101C0.915622 82.7526 -1 88.8465 -1 96H1C1 89.1535 2.83438 83.7474 6.73743 80.4349C10.6349 77.1272 16.838 75.7019 26.0452 77.3641L26.4005 75.3959ZM64.0417 34.2858C68.1618 48.1001 63.0533 59.0984 54.7432 66.3139C46.3758 73.5791 34.8545 76.9221 26.4005 75.3959L26.0452 77.3641C35.1909 79.0152 47.3082 75.4182 56.0544 67.8241C64.858 60.1802 70.3382 48.3998 65.9583 33.7142L64.0417 34.2858ZM90.4529 -1C79.3517 -0.992307 70.8799 1.74143 66.1176 7.69682C61.3388 13.673 60.5475 22.57 64.0417 34.2858L65.9583 33.7142C62.5456 22.2717 63.4971 14.1764 67.6796 8.94589C71.8788 3.69466 79.5873 1.00753 90.4543 1L90.4529 -1ZM90.4536 1H387V-1H90.4536V1ZM387 1C403.016 1 416 13.9837 416 30H418C418 12.8792 404.121 -1 387 -1V1ZM416 30V177H418V30H416ZM416 177C416 193.016 403.016 206 387 206V208C404.121 208 418 194.121 418 177H416ZM387 206H30V208H387V206ZM30 206C13.9837 206 1 193.016 1 177H-1C-1 194.121 12.8792 208 30 208V206ZM1 177V96H-1V177H1Z"
-                                            fill="currentcolor" />
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="writing-icon">
-                                <i class="fal fa-lightbulb-on"></i>
-                            </div>
-                            <div class="writing-content">
-                                <h4 class="title">THE PRIME REWARD - AIRDROP</h4>
-                                <p class="home-ar">
-                                    Promoting consumer goods like food and clothing is entirely different from
-                                    cryptocurrency projects. Promoting crypto projects requires a different set of language
-                                    and approach. As the use of cryptocurrencies becomes more popular, crypto projects need
-                                    to develop more efficient reward and promotion strategies to stand out from competitors
-                                    especially for newly developed crypto projects. Instead of spending huge amount in
-                                </p>
-                                <a href="/prime/info#airdrop" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9">
-                        <div class="writing-item">
-                            <div class="writing-shape">
-                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg" x="0px"
-                                    y="0px" preserveAspectRatio="none">
-                                    <g opacity="0.1">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0 96C0 82 7.5 73 26.2229 76.38C43.8225 79.5573 73.5 62.5 65 34C58.0931 10.8417 68.4854 0.0152226 90.4536 0H387C403.569 0 417 13.4315 417 30V177C417 193.569 403.569 207 387 207H30C13.4315 207 0 193.569 0 177V96Z"
-                                            fill="currentcolor" />
-                                        <path
-                                            d="M26.2229 76.38L26.0452 77.3641L26.0452 77.3641L26.2229 76.38ZM65 34L64.0417 34.2858L65 34ZM90.4536 0L90.4536 -1L90.4529 -1L90.4536 0ZM26.4005 75.3959C16.8849 73.6781 9.9765 75.0628 5.4433 78.9101C0.915622 82.7526 -1 88.8465 -1 96H1C1 89.1535 2.83438 83.7474 6.73743 80.4349C10.6349 77.1272 16.838 75.7019 26.0452 77.3641L26.4005 75.3959ZM64.0417 34.2858C68.1618 48.1001 63.0533 59.0984 54.7432 66.3139C46.3758 73.5791 34.8545 76.9221 26.4005 75.3959L26.0452 77.3641C35.1909 79.0152 47.3082 75.4182 56.0544 67.8241C64.858 60.1802 70.3382 48.3998 65.9583 33.7142L64.0417 34.2858ZM90.4529 -1C79.3517 -0.992307 70.8799 1.74143 66.1176 7.69682C61.3388 13.673 60.5475 22.57 64.0417 34.2858L65.9583 33.7142C62.5456 22.2717 63.4971 14.1764 67.6796 8.94589C71.8788 3.69466 79.5873 1.00753 90.4543 1L90.4529 -1ZM90.4536 1H387V-1H90.4536V1ZM387 1C403.016 1 416 13.9837 416 30H418C418 12.8792 404.121 -1 387 -1V1ZM416 30V177H418V30H416ZM416 177C416 193.016 403.016 206 387 206V208C404.121 208 418 194.121 418 177H416ZM387 206H30V208H387V206ZM30 206C13.9837 206 1 193.016 1 177H-1C-1 194.121 12.8792 208 30 208V206ZM1 177V96H-1V177H1Z"
-                                            fill="currentcolor" />
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="writing-icon">
-                                <i class="fal fa-globe"></i>
-                            </div>
-                            <div class="writing-content">
-                                <h4 class="title">THE PRIME CION REWARD MARGIN</h4>
-                                <p class="home-ar">
-                                    You are invited to play a critical role in the expansion of our ecosystem and share in
-                                    the rewards.
+                        <div class="col-sm-10 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="pre-sale-timer-outer">
+                                <div class="pre-sale-timer style-2">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <h3>Pre-Sale <span>will end in</span></h3>
+                                            <div id="clock" data-date="2023/7/5"></div>
+                                            <div class="hero-right-btn"><a class="btn btn4" href="/signup">Register &
+                                                    Buy Tokens Now</a></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="rang-slider-main">
+                                                <div class="rang-slider-toltip">
+                                                    <span>Soft Cap <strong>$25,624</strong></span>
+                                                    <span>Hard Cap <strong>$100,000</strong></span>
+                                                </div>
+                                                <div class="rang-slider">
+                                                    <div class="rang-line">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="rang-slider-total">
+                                                    <span>Total raised <strong>$91,000</strong></span>
+                                                    <div class="rangTotal">91<small>%</small></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    As an investor, if the total amount of USDT invested in purchasing prime coin is up to
-                                    $1000, then all your prime rewards(airdrop) are instantly withdrawable.
-                                    As an investor, if the total amount of USDT invested in purchasing prime coin is not up
-                                    to $1000, then 50% of all your prime rewards (airdrop) are instantly withdrawable while
-                                    the other 50% is used to purchase more prime coin for you automatically. This way you
-                                    accumulate more prime coin while you earn rewards.
-                                </p>
-                                <a href="/prime/info#reward_margin" class="link-btn">See More<i class="far fa-arrow-right"></i></a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9">
-                        <div class="writing-item">
-                            <div class="writing-shape">
-                                <svg viewBox="0 0 417 207" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    x="0px" y="0px" preserveAspectRatio="none">
-                                    <g opacity="0.1">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0 96C0 82 7.5 73 26.2229 76.38C43.8225 79.5573 73.5 62.5 65 34C58.0931 10.8417 68.4854 0.0152226 90.4536 0H387C403.569 0 417 13.4315 417 30V177C417 193.569 403.569 207 387 207H30C13.4315 207 0 193.569 0 177V96Z"
-                                            fill="currentcolor" />
-                                        <path
-                                            d="M26.2229 76.38L26.0452 77.3641L26.0452 77.3641L26.2229 76.38ZM65 34L64.0417 34.2858L65 34ZM90.4536 0L90.4536 -1L90.4529 -1L90.4536 0ZM26.4005 75.3959C16.8849 73.6781 9.9765 75.0628 5.4433 78.9101C0.915622 82.7526 -1 88.8465 -1 96H1C1 89.1535 2.83438 83.7474 6.73743 80.4349C10.6349 77.1272 16.838 75.7019 26.0452 77.3641L26.4005 75.3959ZM64.0417 34.2858C68.1618 48.1001 63.0533 59.0984 54.7432 66.3139C46.3758 73.5791 34.8545 76.9221 26.4005 75.3959L26.0452 77.3641C35.1909 79.0152 47.3082 75.4182 56.0544 67.8241C64.858 60.1802 70.3382 48.3998 65.9583 33.7142L64.0417 34.2858ZM90.4529 -1C79.3517 -0.992307 70.8799 1.74143 66.1176 7.69682C61.3388 13.673 60.5475 22.57 64.0417 34.2858L65.9583 33.7142C62.5456 22.2717 63.4971 14.1764 67.6796 8.94589C71.8788 3.69466 79.5873 1.00753 90.4543 1L90.4529 -1ZM90.4536 1H387V-1H90.4536V1ZM387 1C403.016 1 416 13.9837 416 30H418C418 12.8792 404.121 -1 387 -1V1ZM416 30V177H418V30H416ZM416 177C416 193.016 403.016 206 387 206V208C404.121 208 418 194.121 418 177H416ZM387 206H30V208H387V206ZM30 206C13.9837 206 1 193.016 1 177H-1C-1 194.121 12.8792 208 30 208V206ZM1 177V96H-1V177H1Z"
-                                            fill="currentcolor" />
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="writing-icon">
-                                <i class="fal fa-user-friends"></i>
-                            </div>
-                            <div class="writing-content">
-                                <h4 class="title ">MAJOR / MINOR BLOCKS & MULTI-MINING</h4>
-                                <p class="home-ar">
 
-                                    We are simply combining all the key aspects of carrying out an efficient and productive
-                                    mining
-                                    activity. From building a highly effective data center to providing a robust mining
-                                    system for our
-                                    ecosystem.
-
-                                    The blockchain distribute database that maintains a continous growing list of ordered
-                                    records called
-                                    major blocks and these blocks are linked using cryptography.
-                                </p>
-                                <a href="/prime/info#mining" class="link-btn">Read More<i class="far fa-arrow-right"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="faq-section p-tb light-gray-bg" id="faq">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading">Frequently Asked Questions</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-10">
+                            <div class="tab-section">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <span class="nav-link active" id="general-tab" data-toggle="tab"
+                                            href="#general" role="tab" aria-controls="general"
+                                            aria-selected="true">General Faqs</span>
+                                    </li>
 
-        </section>
 
-
-
-        <section class="about-area-two pb-110 pt-110">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="counter-wrap">
-                            <div class="row g-0">
-                                <div class="col-lg-8">
-                                    <div class="counter-item-wrap bg-shiba "
-                                        data-background="assets/img/images/h2_counter_shape.png">
-                                        <h6 class="title text-white fs-4">COUNTDOWN TO PRESALE</h6>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class=" d-flex justify-content-between">
-                                                    <div>
-                                                        <div class="counter-item-two">
-                                                            <h2 class="count" id="days">00</h2>
-                                                            <p class="text-white">Days</p>
-                                                        </div>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="general" role="tabpanel"
+                                        aria-labelledby="general-tab">
+                                        <div class="accordion md-accordion style-2" id="accordionGeneral"
+                                            role="tablist" aria-multiselectable="true">
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingOne1">
+                                                    <a data-toggle="collapse" data-parent="#accordionGeneral"
+                                                        href="#collapseOne1" aria-expanded="true"
+                                                        aria-controls="collapseOne1">
+                                                        <h5 class="mb-0">
+                                                            What is special about PrimeCoin? <i
+                                                                class="fas fa-caret-down rotate-icon"></i>
+                                                        </h5>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                                    aria-labelledby="headingOne1" data-parent="#accordionGeneral">
+                                                    <div class="card-body">
+                                                        PrimeCoin is the cryptocurrency that will power and be used as
+                                                        trading fees for the Prime Exchange and ecosystem, one of the
+                                                        world leading exchangers. the coin will be used for all products
+                                                        within the prime ecosystem.
                                                     </div>
-                                                    <div>
-                                                        <div class="counter-item-two">
-                                                            <h2 class="count" id="hours">00</h2>
-                                                            <p class="text-white">Hours</p>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingTwo2">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-parent="#accordionGeneral" href="#collapseTwo2"
+                                                        aria-expanded="false" aria-controls="collapseTwo2">
+                                                        <h5 class="mb-0">
+                                                            How do I purchase prime coin? <i
+                                                                class="fas fa-caret-down rotate-icon"></i>
+                                                        </h5>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseTwo2" class="collapse" role="tabpanel"
+                                                    aria-labelledby="headingTwo2" data-parent="#accordionGeneral">
+                                                    <div class="card-body">
+                                                        <u>
+                                                            <li>Download Trust Wallet.</li>
+                                                            <li>Fund your Trust wallet with USDT (TRC 20) tokens</li>
+                                                            <li>Create a free account at primeproject.io</li>
+                                                            <li>Login and transfer your USDT from Trust wallet to your
+                                                            </li>
+                                                            <li>primecoin wallet using the deposit button</li>
+                                                            <li>Go ahead and purchase using the buy PMC button.</li>
+                                                        </u>
+
                                                     </div>
-                                                    <div>
-                                                        <div class="counter-item-two">
-                                                            <h2 class="count" id="mins">00</h2>
-                                                            <p class="text-white">Minitues</p>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingThree3">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-parent="#accordionGeneral" href="#collapseThree3"
+                                                        aria-expanded="false" aria-controls="collapseThree3">
+                                                        <h5 class="mb-0">
+                                                            what is the minimum and maximum amount of primecoin I can
+                                                            purchase ? <i class="fas fa-caret-down rotate-icon"></i>
+                                                        </h5>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseThree3" class="collapse" role="tabpanel"
+                                                    aria-labelledby="headingThree3" data-parent="#accordionGeneral">
+                                                    <div class="card-body">
+                                                        You can buy primecoin with as low as $20. This makes it possible
+                                                        for everyone to be a holder. The maximum Purchase of primecoin
+                                                        that any wallet can purchase is $15,000 hence primecoin cannot
+                                                        be rug pulled by a single individual or by whales.
                                                     </div>
-                                                    <div>
-                                                        <div class="counter-item-two">
-                                                            <h2 class="count" id="secs">00</h2>
-                                                            <p class="text-white">Seconds</p>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingFour4">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-parent="#accordionGeneral" href="#collapseFour4"
+                                                        aria-expanded="false" aria-controls="collapseFour4">
+                                                        <h5 class="mb-0">
+                                                            What is Primecoin Airdrop? <i
+                                                                class="fas fa-caret-down rotate-icon"></i>
+                                                        </h5>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseFour4" class="collapse" role="tabpanel"
+                                                    aria-labelledby="headingFour4" data-parent="#accordionGeneral">
+                                                    <div class="card-body">
+                                                        200,000,000 tokens has been exclusively reserved for rewarding
+                                                        community members who are willing to share this life changing
+                                                        opportunity with others.
+
+                                                        When you invite someone to purchase primecoin, you instantly get
+                                                        rewarded with 20% of any amount they purchase in primecoin
+                                                        Airdrop. Primecoin airdrop is instantly withdrawable as USDT
+                                                        into your Trust Wallet.
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingFive5">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-parent="#accordionGeneral" href="#collapseFive5"
+                                                        aria-expanded="false" aria-controls="collapseFive5">
+                                                        <h5 class="mb-0">
+                                                            What are the risk associated with investing in primecoin? <i
+                                                                class="fas fa-caret-down rotate-icon"></i>
+                                                        </h5>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseFive5" class="collapse" role="tabpanel"
+                                                    aria-labelledby="headingFive5" data-parent="#accordionGeneral">
+                                                    <div class="card-body">
+                                                        1. Do not share your trust wallet 12 words recovery phrase with
+                                                        anyone as your funds can be stolen or tampered with.
+                                                        <br>
+                                                        2. Do not lose or forget your primecoin wallet password as you
+                                                        cannot access your wallet without your password or reset your
+                                                        password if forgotten.
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingSix6">
+                                                    <a class="collapsed" data-toggle="collapse"
+                                                        data-parent="#accordionGeneral" href="#collapseSix6"
+                                                        aria-expanded="false" aria-controls="collapseSix6">
+                                                        <h5 class="mb-0">
+                                                            <h5 class="mb-0">
+                                                                How do I accumulate more Primecoin? <i
+                                                                    class="fas fa-caret-down rotate-icon"></i>
+                                                            </h5>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseSix6" class="collapse" role="tabpanel"
+                                                    aria-labelledby="headingSix6" data-parent="#accordionPre">
+                                                    <div class="card-body">
+                                                        You can either deposit USDT into your primecoin wallet and make
+                                                        purchase or invite your friends to make purchase and get
+                                                        rewarded with airdrop. You can also purchase primecoin with your
+                                                        airdrop rewards.
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
 
-                                    <div class="certificate-wrap">
-                                        <div class="certificate-active">
-                                            <div class="certificate-item">
-                                                <h4 class="count" >Prime Coin</h4>
-                                            </div>
-                                            <div class="certificate-item">
-                                                <h4 class="text-dark" >Prime Coin</h4>
-                                            </div>
-                                            <div class="certificate-item">
-                                                <h4>Prime Coin</h4>
-                                            </div>
-                                            <div class="certificate-item">
-                                                <h4>Prime Coin</h4>
-                                            </div>
-                                        </div>
+        </div>
+        <div class="clear"></div>
+        <footer class="platinum-footer pt-0 pb-0">
+            <div class="footer-widget-area pt-5 text-center">
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-lg-8">
+
+                            <div class="widget-area">
+                                <div class="widget">
+                                    <ul class="footer-menu horizontal-menu onepage">
+                                        <li><a href="#about">About ICO</a></li>
+                                        <li><a href="#convertor">Currency Convertor</a></li>
+                                        <li><a href="#token">Token</a></li>
+                                        <li><a href="#roadmap">Roadmap</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget-area">
+                                <div class="widget widget-html">
+                                    <h2 class="widget-title">Newsletter</h2>
+                                    <div class="text">
+                                        <p>Keep to date with our progress. Subscribe for e-mail updates.</p>
                                     </div>
-
+                                    <div class="    ">
+                                        <form method="post">
+                                            <input type="email" name="Email" placeholder="Your email address">
+                                            <button class="btn" name="subscribe">subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-area">
+                                <div class="widget widget-html text-center">
+                                    <div class="socials">
+                                        <ul>
+                                            <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li><a href="https://telegram.org/"><i
+                                                        class="fab fa-telegram-plane"></i></a></li>
+                                            <li><a href="https://bitcoin.com/"><i class="fab fa-btc"></i></a></li>
+                                            <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="counter-shape">
-                <img src="assets/img/images/counter_shape.png" alt="" data-aos="fade-left" data-aos-delay="300">
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copy-text">Copyright © {{ date('Y') }} {{ env('APP_NAME') }} All rights
+                                reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </footer>
 
-    </main>
+
+
+    </div>
+    <!--Main Wrapper End-->
+
+    <script src="{{ asset('main/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('main/js/circle-progress.js') }}"></script>
+    <script src="{{ asset('main/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('main/js/onpagescroll.js') }}"></script>
+    <script src="{{ asset('main/js/wow.min.js') }}"></script>
+    <script src="{{ asset('main/js/jquery.countdown.js') }}"></script>
+    <script src="{{ asset('main/js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('main/js/slick.min.js') }}"></script>
+    <script src="{{ asset('main/js/Chart.js') }}"></script>
+    <script src="{{ asset('main/js/chart-function.js') }}"></script>
+    <script src="{{ asset('main/js/fancybox/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('main/js/script2.js') }}"></script>
+    <script src="{{ asset('main/js/particles.js') }}"></script>
+    <script src="{{ asset('main/js/gold-app2.js') }}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            setTimeout(function() {
+                jQuery('.coinpool-animation').addClass('start-animation');
+            }, 1000);
+            setTimeout(function() {
+                jQuery('.coinpool-animation .lines').addClass('active');
+            }, 2000);
+        });
+    </script>
+
 
     <script>
-        var countDownDate = new Date("Jun 30, 2023 00:00:00").getTime();
+        (function($) {
+            'use strict';
+            /*======================= 
+              01. Wow Active 
+            ======================*/
+            new WOW().init();
 
+            /*======================= 
+              02. Timer
+            ======================*/
+            var ClockDate = $('#clock').data("date");
+            $('#clock').countdown(ClockDate, function(event) {
+                var $this = $(this).html(event.strftime('' +
+                    '<ul>' +
+                    '<li><span>%D<em>days</em></span></li>' +
+                    '<li><span>%H<em>hours </em></span></li>' +
+                    '<li><span>%M<em>minutes</em></span></li>' +
+                    '<li><span>%S<em>seconds</em></span></li>' +
+                    '</ul>'
+                ));
+            });
 
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            $('#days').html(days);
-            $('#hours').html(hours);
-            $('#mins').html(minutes);
-            $('#secs').html(seconds);
-
-
-        }, 1000);
+        })(jQuery);
     </script>
-@endsection
+</body>
+
+</html>

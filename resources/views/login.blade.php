@@ -1,163 +1,105 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Prime Coin | Login</title>
-    <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Responsive Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- favicon & bookmark -->
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="images/favi-icon.ico" type="image/x-icon" />
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/select2.min.css">
-    <link rel="stylesheet" href="assets/css/animatedheadline.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Website Title -->
+    <title>Prime Coin</title>
+    <!-- Stylesheets Start -->
+    <link rel="stylesheet" href="{{ asset('main/css/fontawesome.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/bootstrap.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/animate.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/fancybox/jquery.fancybox.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/owl.carousel.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/slick.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/my-style2.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('main/css/responsive2.css') }}" type="text/css" />
 </head>
 
 <body>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner">
-            <div class="rect1"></div>
-            <div class="rect2"></div>
-            <div class="rect3"></div>
-            <div class="rect4"></div>
-            <div class="rect5"></div>
-        </div>
-    </div>
-    <!-- Preloader -->
-
-    <!-- Scroll-top -->
-    <button class="scroll-top scroll-to-target" data-target="html">
-        <i class="fas fa-angle-up"></i>
-    </button>
-    <!-- Scroll-top-end-->
-
-    <!-- header-area -->
-    <header>
-        <div id="sticky-header" class="menu-area menu-area-four transparent-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="menu-wrap">
-                            <nav class="menu-nav">
-                                <div class="logo">
-                                    <a class="d-flex justify-content-between "  href="/">
-                                        <img class="img-fluid" style="width: 30px; height: 30px" src="{{ asset('assets/img/logo.png') }}" alt="Prime Coin">
-                                        <h3 class="mb-0 align-middle ml-3 fw-bold " >PrimeCoin</h3>
-                                    </a>
-                                </div>
-                            </nav>
-                        </div>
+    <div class="wrapper login-page style-3" id="top">
+        <div class="cp-container">
+            <div class="form-part">
+                <div class="cp-header text-center">
+                    <div class="logo">
+                        <a href="/">
+                            <h4>Prime Cion</h4>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-area-end -->
-
-    <!-- main-area -->
-    <main class="main-content">
-        <div class="noise-bg" data-background="assets/img/bg/noise_bg.png"></div>
-        <div class="main-shape" data-background="assets/img/images/main_shape.png"></div>
-
-        <!-- login-area -->
-        <section class="login-area about-area-two">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-10">
-                        <div class="login-content">
-                            <h3 class="title">Log into your account</h3>
-                            <span>👋 Welcome back! Please enter your details.</span>
-                            @if (session('success'))
-                                <div class="mb-2">
-                                    <i class="text-success fw-bold "> {{ session('success') }} </i>
-                                </div>
-                            @endif
-                            @if (session('error'))
-                                <div class="mb-2">
-                                    <i class="text-danger fw-bold "> {{ session('error') }} </i>
-                                </div>
-                            @endif
-                            <form method="post" action=" {{ route('access-account') }} ">
-                                @csrf
-                                <div class="form-grp">
-                                    <label for="username">Your Username</label>
-                                    <input type="text" name="username" value='{{ old('username') }}' >
-                                    @error('username')
-                                        <i class="text-danger fw-bold ">{{ $message }} </i>
-                                    @enderror
-                                </div>
-                                <div class="form-grp">
-                                    <label for="word">Password</label>
-                                    <input type="password" name="password">
-                                    @error('password')
-                                        <i class="text-danger fw-bold ">{{ $message }} </i>
-                                    @enderror
-                                </div>
-                                <div class="password-wrap">
-                                    <div class="form-grp checkbox-grp">
-                                        <input type="checkbox" id="checkbox" class="form-check-input">
-                                        <label for="checkbox">Remember for 30 days</label>
-                                    </div>
-                                </div>
-                                <button type="submit" class="sine-btn">sign in</button>
-                                <span>Don’t have an account? <a href="/signup">Sign up for free</a> </span>
-                            </form>
+                <div class="cp-heading text-center">
+                    <h5>Welcome Back :)</h5>
+                    <p>Too keep connected with us please login with your personal information by username and
+                        password.</p>
+                </div>
+                <div class="cp-body">
+                    @if (session('success'))
+                        <div class="mb-2 text-center ">
+                            <i class="text-success "> {{ session('success') }} </i>
                         </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="login-right-content-wrap">
-                            <div class="login-right-bg" data-background="assets/img/bg/error_bg.jpg"></div>
-                            <div class="login-right-content-inner">
-                                <img src="assets/img/images/login_img.png" alt="">
+                    @endif
+                    @if (session('error'))
+                        <div class="mb-2 text-center">
+                            <i class="text-danger"> {{ session('error') }} </i>
+                        </div>
+                    @endif
+                    <form method="post" action=" {{ route('access-account') }} ">@csrf
+                        <div class="form-group username-field">
+                            <div class="form-field">
+                                <input class="form-control" type="text" placeholder="Username" required=""
+                                    name="username">
+                                @error('username')
+                                    <i class="text-danger ">{{ $message }} </i>
+                                @enderror
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group password-field">
+                            <div class="form-field">
+                                <input class="form-control" name="password" type="password" placeholder="password"
+                                    required="">
+                                @error('password')
+                                    <i class="text-danger fw-bold ">{{ $message }} </i>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn">Login</button>
+                        </div>
+                        <div class="form-group">
+                            <p class="text-center"><a href="/signup" class="forgot-link">Sign Up</a></p>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-        <!-- login-area-end -->
-
-    </main>
-    <!-- main-area-end -->
+        </div>
+    </div>
 
 
 
-    <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.odometer.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.js"></script>
-    <script src="assets/js/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/SplitText.js"></script>
-    <script src="assets/js/gsap-animation.js"></script>
-    <script src="assets/js/select2.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/animatedheadline.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
+
+    <script src="{{ asset('main/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('main/js/circle-progress.js') }}"></script>
+    <script src="{{ asset('main/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('main/js/onpagescroll.js') }}"></script>
+    <script src="{{ asset('main/js/wow.min.js') }}"></script>
+    <script src="{{ asset('main/js/jquery.countdown.js') }}"></script>
+    <script src="{{ asset('main/js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('main/js/slick.min.js') }}"></script>
+    <script src="{{ asset('main/js/Chart.js') }}"></script>
+    <script src="{{ asset('main/js/chart-function.js') }}"></script>
+    <script src="{{ asset('main/js/fancybox/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('main/js/script2.js') }}"></script>
+    <script src="{{ asset('main/js/particles.js') }}"></script>
+    <script src="{{ asset('main/js/gold-app2.js') }}"></script>
+
 </body>
-
-<!-- Mirrored from themeadapt.com/tf/dexai/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 May 2023 06:05:27 GMT -->
 
 </html>

@@ -31,14 +31,20 @@ Route::post('/create-account', [AuthController::class, 'createAccount'])->name('
 Route::post('/access-account', [AuthController::class, 'userLogin'])->name('access-account');
 Route::get('/get_price', [TransactionController::class, 'fetchCoinPriceApi']);
 Route::view('/prime/info', 'info' );
+Route::view('/name', 'main' );
 
 
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
     Route::get('/dashboard', [UserController::class, 'indexU']);
     Route::get('/deposit', [UserController::class, 'depositIndex']);
+
+
+    Route::get('/wallet', [UserController::class, 'walletSettingIndex']);
+
+
     Route::view('/transfer', 'users.transfer');
-    Route::view('/convert', 'users.convert');
+    Route::view('/convert', 'users.convert'); //
 
     Route::post('/make_deposit', [TransactionController::class, 'makeDeposit'])->name('make_deposit');    
 });

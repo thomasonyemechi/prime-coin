@@ -30,7 +30,7 @@ class TransactionController extends Controller
             'status' => 'pending',
         ]);
         ///qeue mail to send to admin and users
-        return back()->with('success', 'Your USDT deposit has been made and will be reviewed by the admins ');
+        return back()->with('success', 'USDT deposit request has been logged, transfer token to the specified wallet address ');
     }
 
 
