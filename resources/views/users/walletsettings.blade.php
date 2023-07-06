@@ -17,12 +17,27 @@
                             </div>
                         </div>
 
-                        <form>
+                        <form method="POST" action="/wallet_update" autocomplete="off">@csrf
                             <div class="form-group">
-                                <label class="form-label" for="email">New Wallet Address:</label>
-                                <input type="text" class="form-control" name="waller_adress">
+                                <label class="form-label" for="email">Current Wallet Address:</label>
+                                <input type="text" class="form-control" name="old"
+                                    value="{{ auth()->user()->wallet }}" readonly>
                             </div>
-                            <div class="d-flex justify-content-end" >
+                            <div class="form-group">
+                                <label class="form-label">New Wallet Address:</label>
+                                <input type="text" class="form-control" name="wallet_address" autocomplete="off">
+                                @error('wallet_address')
+                                    <i class="text-danger  ">{{ $message }} </i>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Confirm Password:</label>
+                                <input type="password" class="form-control" name="password" required autocomplete="new-password">
+                                @error('password')
+                                    <i class="text-danger  ">{{ $message }} </i>
+                                @enderror
+                            </div>
+                            <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary rounded">Update</button>
                             </div>
                         </form>
@@ -45,6 +60,14 @@
                                         <th scope="col">Timestamp</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    @foreach ($wallets as $wallet)
+                                        <tr>
+                                            <td>{{ $wallet->wallet_address }}</td>
+                                            <td>{{ $wallet->created_at }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>

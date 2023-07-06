@@ -42,15 +42,16 @@
                 </div>
                 <div class="cp-body">
                     @if (session('success'))
-                        <div class="mb-2 text-center ">
+                        <div class="mb-2 text-center refresh ">
                             <i class="text-success "> {{ session('success') }} </i>
                         </div>
                     @endif
                     @if (session('error'))
-                        <div class="mb-2 text-center">
+                        <div class="mb-2 text-center refresh">
                             <i class="text-danger"> {{ session('error') }} </i>
                         </div>
                     @endif
+
                     <form method="post" action=" {{ route('access-account') }} ">@csrf
                         <div class="form-group username-field">
                             <div class="form-field">
@@ -99,6 +100,16 @@
     <script src="{{ asset('main/js/script2.js') }}"></script>
     <script src="{{ asset('main/js/particles.js') }}"></script>
     <script src="{{ asset('main/js/gold-app2.js') }}"></script>
+
+
+    <script>
+        $(function() {
+            setTimeout(() => {
+                $('.refresh').hide('slow');
+            }, 5000);
+        })
+    </script>
+
 
 </body>
 

@@ -17,9 +17,22 @@ function depositStatus($status)
 }
 
 
+function spcBalance($user_id)
+{
+    $balance = Wallet::where(['user_id' => $user_id, 'type' => '3' ])->sum('amount');
+    return $balance;
+}
+
+
 function usdtBalance($user_id) 
 {
     $balance = Wallet::where(['user_id' => $user_id, 'type' => '1' ])->sum('amount');
+    return $balance;
+}
+
+function pcBalance($user_id)
+{
+    $balance = Wallet::where(['user_id' => $user_id, 'type' => '2' ])->sum('amount');
     return $balance;
 }
 

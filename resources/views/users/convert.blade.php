@@ -1,121 +1,145 @@
-@extends('layout.app')
+@extends('layout.main')
 
 @section('page_content')
-    <main class="main-content-two  after-login fix">
-        <section class="inner-about-area pb-115">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                        @include('users.head')
+    <div class="container-fluid content-inner pb-0">
+        <div class="row pt-2">
+            <div class="col-lg-4">
+                <div class="card card-block card-stretch custom-scroll">
+                    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                        <div class="caption">
+                            <h4 class="font-weight-bold mb-2">Buy Prime Coin</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-4  col-12">
-                        @include('users.nav')
-                    </div>
-                    <div class="col-lg-9 col-md-8 col-12">
-                        <div class="comment-respond" style="width: 100%">
-                            <h3 class="comment-reply-title">Buy Prime Coin</h3>
-                            <span>Convert Your USDT to get prime coin (PC)</span>
+                    <div class="card-body">
 
-                            {!! dropError() !!}
 
-                            <form class="comment-form" method="post" action="{{ route('make_deposit') }}">@csrf
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <label for="amount">Amount In PC</label>
-                                            <input type="number" name="pc" id="pc" value="{{ old('amount') }}">
-                                            @error('amount')
-                                                <i class="text-danger  ">{{ $message }} </i>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <label for="text"> Amount In USDT </label>
-                                            <input type="text" name="usdt" id="usdt" value="{{ old('wallet') }}">
-                                            @error('wallet')
-                                                <i class="text-danger ">{{ $message }} </i>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn">Convert To PC</button>
-                            </form>
+
+                        <div class="d-flex justify-content-start mb-2 gap-2">
+                            <span class="fs-6 fw-bold me-2" >1 USDT = {{$rate}} PC</span>
                         </div>
 
 
 
-                        {{-- <div class="comment-respond mt-4" style="width: 100%">
-                            <h3 class="comment-reply-title"> Deposit History</h3>
-                            <div class="table-responsive">
-                                <table class="table text-white ">
-                                    <thead>
-                                        <tr>
-                                            <th>S/N</th>
-                                            <th>Amount</th>
-                                            <th>Description</th>
-                                            <th>Status</th>
-                                            <th>Timestamp</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($deposits as $dep)
-                                            <tr>
-                                                <td> {{ $loop->iteration }} </td>
-                                                <td> {!! depositAmount($dep->amount) !!} </td>
-                                                <td> deposit from {{ $dep->wallet }} </td>
-                                                <td> {!! depositStatus($dep->status) !!} </td>
-                                                <td> {{ $dep->created_at }} </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                        <div class="card shining-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('assets/images/coins/01.png') }}"
+                                            class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
+                                        <span class="fs-6 fw-bold me-2" style="line-height: 20px">USDT balance <br>
+                                            <span style="font-weight: lighter"> {{  number_format($usdt_balance,2) }} <small>USDT</small> </span></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div> --}}
+                        </div>
 
+                        <form method="post" id="buypmc" action="{{ route('buy_primecoin') }}">@csrf
 
+                            <div class="form-group">
+                                <label for="text"> Amount In USDT </label>
+                                <input type="number" name="usdt_amount" class="form-control" min="20" max="{{ $usdt_balance }}" name="usdt" id="usdt"
+                                    value="{{ old('wallet') }}">
+                                @error('wallet')
+                                    <i class="text-danger ">{{ $message }} </i>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="amount">Amount In PC</label>
+                                <input type="number" class="form-control" name="pc" id="pc" readonly>
+                            </div>
+
+                            <div class="d-flex justify-content-end ">
+                                <button type="submit" class="btn buypmcbtn btn-primary">Buy</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="col-lg-8">
+                <div class="card card-block card-stretch custom-scroll">
+                    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                        <div class="caption">
+                            <h4 class="font-weight-bold mb-2">Purchase History</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table data-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">USDT</th>
+                                        <th scope="col">Rate</th>
+                                        <th scope="col">PC</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($purchases as $pur)
+                                        <tr>
+                                            <td> {{$pur->amount}} USDT </td>
+                                            <td> {{$pur->rate}}/USDT </td>
+                                            <td> {{number_format($pur->amount*$pur->rate, 2)}} PC </td>
+                                            <td>
+                                                <div class="badge  bg-success" >
+                                                    successful
+                                                </div>
+                                            </td>
+                                            <th>{{ $pur->created_at }}</th>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-    </main>
+    </div>
 @endsection
+
+
 
 @push('scripts')
     <script>
         $(function() {
 
-            $('#pc').on('keyup', function() {
-                pc = $('#pc');
-                usdt = $('#usdt');
-                coin = parseInt(pc.val());
-                $.ajax({
-                    method: 'get',
-                    url: '/get_price'
-                }).done(function(res) {
-                    price = coin/res.price
-                    usdt.val(price)
-                }).fail(function(res) {
-                    console.log(res);
-                })
+            // $('#pc').on('keyup', function() {
+            //     pc = $('#pc');
+            //     usdt = $('#usdt');
+            //     coin = parseInt(pc.val());
+            //     $.ajax({
+            //         method: 'get',
+            //         url: '/get_price'
+            //     }).done(function(res) {
+            //         price = coin / res.price
+            //         usdt.val(price)
+            //     }).fail(function(res) {
+            //         console.log(res);
+            //     })
+            // })
+
+
+            $('#buypmc').on('submit', function() {
+                $('.buypmcbtn').attr('disabled', 'disabled');
             })
 
-
+            
             $('#usdt').on('keyup', function() {
-                pc = $('#pc');
                 usdt = $('#usdt');
-                coin = parseInt(usdt.val());
+                amt_usdt = parseInt(usdt.val());
                 $.ajax({
                     method: 'get',
                     url: '/get_price'
                 }).done(function(res) {
-                    price = coin*res.price
+                    price = amt_usdt * res.price
+                    
                     price = (price == NaN) ? 0 : price;
-                    pc.val(price)
+
+                    $('#pc').val(price)
                 }).fail(function(res) {
                     console.log(res);
                 })

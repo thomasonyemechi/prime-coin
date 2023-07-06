@@ -24,7 +24,6 @@
                             <table class="table data-table mb-0">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Name</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Description</th>
@@ -34,11 +33,6 @@
                                 <tbody>
                                     @foreach ($deposits as $dep)
                                         <tr class="white-space-no-wrap">
-                                            <td>
-                                                <img src="../assets/images/coins/01.png"
-                                                    class="img-fluid avatar avatar-30 avatar-rounded" alt="img23" />
-                                                USDT
-                                            </td>
                                             <td class="pe-2"> {!! depositAmount($dep->amount) !!} </td>
                                             <td> {!! depositStatus($dep->status) !!} </td>
                                             <td> deposit from {{ $dep->wallet }} </td>
@@ -96,7 +90,7 @@
                         <div id="dep_2" style="display: none">
                             <p>Input the amount of USDT you want to deposit into your primecoin wallet and click on deposit
                             </p>
-                            <form method="post" action="{{ route('make_deposit') }}">@csrf
+                            <form method="post" id="depositusdt" action="{{ route('make_deposit') }}">@csrf
                                 <div class="form-group">
                                     <label for="amount">Amount *</label>
                                     <input type="number" class="form-control" name="amount" value="{{ old('amount') }}">
@@ -110,7 +104,7 @@
                                 
                                 </div>
 
-                                <button type="submit" class="btn btn-primary rounded">Deposit</button>
+                                <button type="submit" class="btn btn-primary depositusdtbtn rounded">Deposit</button>
                             </form>
 
                         </div>
@@ -121,7 +115,7 @@
                                 Send the exact amount of USDT (TRC20) tokens you want to deposit to the wallet address
                                 below: <br><br>
 
-                                ##I will send you the wallet address to display here##
+                                ####
 
                                 <br><br>
                                 Check back in few minutes, your account will credited as soon as your deposit is confirmed
@@ -159,6 +153,12 @@
                 $('#dep_3').show('slowly');
             }
             console.log(er);
+
+
+            $('#depositusdt').on('submit', function() {
+                $('.depositusdtbtn').attr('disabled', 'disabled');
+            })
+
 
             $('.got02').on('click', function () {
                 $('#dep_1').hide('slowly');

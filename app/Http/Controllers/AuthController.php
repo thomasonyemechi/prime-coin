@@ -34,17 +34,16 @@ class AuthController extends Controller
     {
         Validator::make($request->all(), [
             'username' => 'string|unique:users,username',
-            'password' => 'string|min:6',
-            'sponsor' => 'integer'
+            'password' => 'string|min:6|confirmed',
         ])->validate();
 
         User::create([
             'username' => $request->username,
             'password' => Hash::make($request->password),
-            'sponsor' => $request->sponsor ?? 1
+            'sponsor' => $request->referral_id ?? 1
         ]);
 
-        return back()->with('success', 'You have been registered sucessfuly, Proceed to login');
+        return redirect('/login')->with('success', 'You have been registered sucessfuly, Proceed to login');
     }
 
     public function logout(Request $request): RedirectResponse
@@ -57,4 +56,13 @@ class AuthController extends Controller
      
         return redirect('/')->with('success', 'You have been logged out successfuly ');
     }
+
+
+    function get_user()
+    {
+        $res = User::where('username', $_GET['username'])->first(['id', 'username']);
+        if(!$res){ abort(404); }
+        return response($res);
+    }
 }
+

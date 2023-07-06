@@ -6,7 +6,7 @@
     function chart(){
       /* Layout 1 Token Chat */
       var colors = ['red', 'orange', 'green', 'powderblue', 'indigo', 'purple'];
-      var labels = ["Presale Block 50%", "2nd Block 25%", "3rd Block 12.5%", "4th Block 6.25", "5th Block 3.12", "Sum of Lower Blocks 3.12"];
+      var labels = ["Presale Block 50%", "2nd Block 25%", "3rd Block 12.5%", "4th Block 6.25%", "5th Block 3.12%", "Sum of Lower Blocks 3.12%"];
       var data = [50, 25, 12.5, 6.25, 3.12, 3.12];
       var bgColor = colors;
       var dataChart = {

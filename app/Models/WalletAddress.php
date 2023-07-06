@@ -9,5 +9,5 @@ class WalletAddress extends Model
 {
     use HasFactory;
 
-    
+    protected $guarded;
 }

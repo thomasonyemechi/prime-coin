@@ -41,12 +41,12 @@
                 </div>
                 <div class="cp-body">
                     @if (session('success'))
-                        <div class="mb-2 text-center ">
+                        <div class="mb-2 text-center refresh ">
                             <i class="text-success "> {{ session('success') }} </i>
                         </div>
                     @endif
                     @if (session('error'))
-                        <div class="mb-2 text-center">
+                        <div class="mb-2 text-center refresh">
                             <i class="text-danger"> {{ session('error') }} </i>
                         </div>
                     @endif
@@ -54,17 +54,35 @@
                         <div class="form-group username-field">
                             <div class="form-field">
                                 <input class="form-control" type="text" placeholder="Username" required=""
-                                    name="username">
+                                    name="username" value="{{ old('username') }}" >
                                 @error('username')
+                                    <i class="text-danger ">{{ $message }} </i>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group username-field">
+                            <div class="form-field">
+                                <input class="form-control" type="text" placeholder="Refferal Id (optional)"
+                                    name="referral_id">
+                                @error('referral_id')
                                     <i class="text-danger ">{{ $message }} </i>
                                 @enderror
                             </div>
                         </div>
                         <div class="form-group password-field">
                             <div class="form-field">
-                                <input class="form-control" name="password" type="password" placeholder="password"
+                                <input class="form-control" name="password" type="password" autocomplete="new-password" placeholder="password"
                                     required="">
                                 @error('password')
+                                    <i class="text-danger fw-bold ">{{ $message }} </i>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group password-field">
+                            <div class="form-field">
+                                <input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password"
+                                    required="">
+                                @error('password_confirmation')
                                     <i class="text-danger fw-bold ">{{ $message }} </i>
                                 @enderror
                             </div>
@@ -101,6 +119,14 @@
     <script src="{{ asset('main/js/script2.js') }}"></script>
     <script src="{{ asset('main/js/particles.js') }}"></script>
     <script src="{{ asset('main/js/gold-app2.js') }}"></script>
+
+    <script>
+        $(function() {
+            setTimeout(() => {
+                $('.refresh').hide('slow');
+            }, 5000);
+        })
+    </script>
 
 </body>
 

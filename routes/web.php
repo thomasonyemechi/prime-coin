@@ -34,6 +34,12 @@ Route::view('/prime/info', 'info' );
 Route::view('/name', 'main' );
 
 
+
+
+Route::get('/get_user', [AuthController::class, 'get_user']);
+
+
+
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
     Route::get('/dashboard', [UserController::class, 'indexU']);
@@ -41,10 +47,16 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('/wallet', [UserController::class, 'walletSettingIndex']);
+    Route::post('/wallet_update', [UserController::class, 'updateWallet']);
+    Route::post('/transfer', [UserController::class, 'transfer'])->name('transfer');
 
 
-    Route::view('/transfer', 'users.transfer');
-    Route::view('/convert', 'users.convert'); //
+    Route::get('/transfer', [UserController::class, 'transferIndex']);
+    Route::get('/received', [UserController::class, 'rIndex']);
+    Route::get('/earnings', [UserController::class, 'earningsIndex']);
+    Route::get('/convert', [UserController::class, 'convertIndex']); //
+    Route::get('/trade', [UserController::class, 'tradeIndex']); //
+    Route::post('/buy_primecoin', [UserController::class, 'buyPrimeCoin'])->name('buy_primecoin');
 
     Route::post('/make_deposit', [TransactionController::class, 'makeDeposit'])->name('make_deposit');    
 });

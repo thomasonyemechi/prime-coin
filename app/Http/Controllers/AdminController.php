@@ -75,11 +75,12 @@ class AdminController extends Controller
 
         Wallet::create([
             'ref_id' => $dep->id,
-            'currency' => 'USDT',
+            'currency' => 'usdt',
             'amount' => $dep->amount,
             'type' => 1,
             'remark' => 'Fund Deposit',
-            'user_id' => $dep->user_id
+            'user_id' => $dep->user_id,
+            'action' => 'credit'
         ]);
 
         return back()->with('success', 'Deposit has been approved, Account has been funded');

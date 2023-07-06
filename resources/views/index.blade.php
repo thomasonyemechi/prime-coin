@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="{{ asset('main/css/slick.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('main/my-style2.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('main/css/responsive2.css') }}" type="text/css" />
+
+    <style>
+        .more {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -78,15 +84,18 @@
                         <div class="col-sm-12 col-md-6 mobile-center">
                             <h1 class="text-white d-sm-block-none ">A broader, simple vision for web3 <span> is
                                     here!</span></h1>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mauris
-                                bibendum, tincidunt mauris at, tempor nunc.</p>
+                            {{-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mauris
+                                bibendum, tincidunt mauris at, tempor nunc.</p> --}}
                             <div class="hero-btns">
-                                <a href="#" class="btn">Buy PrimeCoin</a>
+                                <a href="/signup" class="btn">Buy PrimeCoin</a>
+                                <a href="/login" class="btn bg-white btn-outline-light ">Login</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
 
             <div class="about-section c-l p-tb" id="about">
 
@@ -117,15 +126,291 @@
                 </div>
             </div>
 
+
+
+            <!-- Benefits Start -->
+            <div class="benefits p-tb light-gray-bg ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="benefit-box text-center ">
+                                <div class="benefit-icon">
+                                    <img src="main/images/section-5/safe-secure-icon.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text" id="idea">
+                                    <h4>THE PRIME STRATEGY - THE IDEA</h4>
+                                    <div>
+                                        <p>
+                                            Cryptocurrency is any form of currency that exists virtually or digitally
+                                            and
+                                            uses cryptography to secure transactions. One of the most secured
+                                            technologies
+                                            ever created is the blockchain technology which makes it difficult for
+                                            hackers
+                                            to corrupt. In cryptocurrency, banks are not needed to very transactions or
+                                            payment. When you transfer cryptocurrencies, <span class="dot">...</span>
+                                            <span class="more">
+                                                the transactions are recorded in a public ledger. Cryptocurrency is
+                                                stored in digital wallets.
+
+                                                The prices of cryptocurrencies fluctuates because of the influence of
+                                                demand and supply which can be further influenced by user sentiments,
+                                                media hype and government regulations.
+
+                                                Many cryptocurrencies are promoted and marketed as speculative
+                                                investments which attract investors looking to make quick profits. Some
+                                                of these investors are less concerned with the long term value of the
+                                                cryptocurrency rather they are more focused on short term price
+                                                movements which can further skyrocket or plummet the prices of
+                                                cryptocurrencies. The critical fact behind the value of a particular
+                                                cryptocurrency is if enough people agree it is valuable, the more people
+                                                want to own it and buy, the higher the price goes, the more people do
+                                                not want to own the coin and sell of, the lower the price goes.
+
+                                                Prime coin is focused on creating a project to solve several user and
+                                                technology challenges investors encounter with cryptocurrencies. The
+                                                best of profits and crypto gains are experienced by investors and
+                                                traders who jump into sustainable projects for the long term and not
+                                                just quick gains which drastically affect the market price. The Prime
+                                                Strategy requires you to compulsorily hold your assets for a minimum of
+                                                1 year before you allowed by the technology to sell. This way the coin
+                                                is fortified against user sentiments, panic crypto news, media hype,
+                                                government regulation and bitcoin dominance. This tested strategy
+                                                ensures only an upward movement in the price of prime coin for the first
+                                                twelve months and a steady fluctuation and growth in the price
+                                                afterwards. Everyone in this project is compelled to aim towards
+                                                appealing long term profits rather than short term gains which creates
+                                                market turmoil.
+
+                                                Too many investors globally have been wanting and desiring a Hodl
+                                                strategy like this. Patience is key! Most crypto investors posses little
+                                                or no experience, skills and ability to play the market and hence are
+                                                not well equipped the market volatility and trade assets, only a few
+                                                professionals stand the chance of making tangible profits from the
+                                                market but the prime strategy makes it easy and convenient for all to
+                                                win, amateurs and professionals alike. Generally the Prime hodl strategy
+                                                refers to the strategy of preventing community members from selling
+                                                their digital assets over a stipulated period to create an overall
+                                                steady growth in coin price.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <a href="javascript:;" class="text-center readmore" data-id="idea">Read More <i
+                                            class="fa fa-arrow-alt-circle-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="benefit-box text-center ">
+                                <div class="benefit-icon">
+                                    <img src="main/images/section-5/safe-secure-icon.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text" id="airdrop">
+                                    <h4>THE PRIME REWARD - AIRDROP</h4>
+                                    <div>
+                                        <p>
+
+                                            THE PRIME REWARD - AIRDROP
+                                            Promoting consumer goods like food and clothing is entirely different from
+                                            cryptocurrency projects. Promoting crypto projects requires a different set
+                                            of language and approach. As the use of cryptocurrencies becomes more
+                                            popular, crypto projects need to develop more efficient reward and promotion
+                                            strategies to stand out from competitors <span class="dot">...</span>
+                                            <span class="more">
+                                                especially for newly developed crypto projects. Instead of spending huge
+                                                amount in paying crypto influencers and manually manipulating coin
+                                                value, we have decided to embrace a more organic route to project and
+                                                community development.
+
+                                                The prime reward is a technique to offer incentives for community
+                                                development through airdropping members when they perform simple
+                                                publicity tasks. Airdrop means sending coins to community members to
+                                                generate excitement, create awareness and attract talents into the
+                                                project. This airdrop reward model implies that community members who
+                                                invite others to purchase prime coin instantly receives as airdrop 20%
+                                                of any amount purchased by those they invited. Therefore anytime prime
+                                                coin is purchased, someone get rewarded with instantly withdrawable
+                                                prime coin tokens as airdrop. You are not required to make any
+                                                investment to qualify for prime rewards(airdrop).
+
+                                                Simply spread the news and get rewarded. In the prime ecosystem,
+                                                airdrops are instantly withdrawable or tradable for other assets such as
+                                                USDT. 200,000,000 tokens have been kept aside for distribution as
+                                                airdrop to community members. This way, the prime coin project recieves
+                                                greater support from a wide range of users. This will encourage
+                                                community members to get involved and take on more responsibilities thus
+                                                a collective contribution in the growth of the coin.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <a href="javascript:;" class="text-center readmore" data-id="airdrop">Read More
+                                        <i class="fa fa-arrow-alt-circle-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="benefit-box text-center ">
+                                <div class="benefit-icon">
+                                    <img src="main/images/section-5/safe-secure-icon.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text" id="margin">
+                                    <h4>THE PRIME CION REWARD MARGIN</h4>
+                                    <div>
+                                        <p>
+
+                                            You are invited to play a critical role in the expansion of our ecosystem
+                                            and share in the rewards. As an investor, if the total amount of USDT
+                                            invested in purchasing prime coin is up to $1000, then all your prime
+                                            rewards(airdrop) are instantly withdrawable. As an investor, if the total
+                                            amount of USDT invested in purchasing prime coin is not up to $1000, <span
+                                                class="dot">...</span>
+                                            <span class="more">
+                                                then 50% of all your prime rewards (airdrop) are instantly withdrawable
+                                                while the other 50% is used to purchase more prime coin for you
+                                                automatically. This way you accumulate more prime coin while you earn
+                                                rewards.
+
+                                                The more attention a coin has the more likely it is for purchases to be
+                                                made globally by random individuals and organisations, when purchases
+                                                are made by new community members who are not invited by old community
+                                                members, the prime rewards are randomly allocated to investors with over
+                                                $1000 worth of primecoin purchased. Together we can make history
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <a href="javascript:;" class="text-center readmore" data-id="margin">Read More <i
+                                            class="fa fa-arrow-alt-circle-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="benefit-box text-center " style="height: auto">
+                                <div class="benefit-icon">
+                                    <img src="main/images/section-5/safe-secure-icon.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text" id="blocks">
+                                    <h4>MAJOR / MINOR BLOCKS & MULTI-MINING</h4>
+                                    <div>
+                                        <p>
+
+
+
+                                            We are simply combining all the key aspects of carrying out an efficient and
+                                            productive mining activity. From building a highly effective data center to
+                                            providing a robust mining system for our ecosystem. The blockchain
+                                            distribute database that maintains a continous growing list of ordered
+                                            records called major blocks and these blocks are linked using <span
+                                                class="dot">...</span>
+                                            <span class="more">
+                                                cryptography. The total prime coin created is 1,200,000,000 coins,
+                                                200,000,000 is exclusively reserved for prime rewards(airdrop) for
+                                                members who are interested in spreading the news of prime coin while
+                                                1,000,000,000 coin reserved exclusively for multi-mining. This powerful
+                                                strategy also helps to ascertain the price of primecoin. The total
+                                                quantity of prime coins are divided into major blocks and distributed
+                                                across minor blocks
+
+                                                The first Major block is half of the total multi-mining quantity which
+                                                is 500,000,000 coins (1,000,000,000/2) The next major block contains
+                                                half the quantity of the previous major block which is 250,000,000 coins
+                                                (500,000,000/2) and it continues this way downwards. So each major block
+                                                contains twice the quantity of the next major block. Major block
+                                                copmprises of minor blocks, each major blocks contains 5 minor blocks
+                                                and each minor block contains one-fifth of the amount of coins that
+                                                particular major block contains. The distribution of prime coin to our
+                                                community will be carried out according to the minor blocks of each
+                                                major block. From the first to the fifth minor block, as the coins
+                                                embedded in a major block are exhausted, the prime coin price changes
+                                                and distribution continues from the next minor block causing a gradual
+                                                decrease in the total coins remaining hence prime coin becomes more
+                                                expensive and scarce.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <a href="javascript:;" class="text-center readmore" data-id="blocks">Read More <i
+                                            class="fa fa-arrow-alt-circle-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="roadmap-sec p-tb" id="roadmap">
+                <div class="container">
+                    <div class="sec-title  text-center">
+                        <h3 class="mt-5 pt-5">Our Network</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div>
+                                <div class="benefit-icon d-flex justify-content-center ">
+                                    <img src="main/images/b-1.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text-center ">
+                                    <h4 class="title fs-4 fw-bold">HIGH ENERGY EFFICIENCY</h4>
+                                    <p>
+                                        Thanks to primecoin's next generation nominated proof-of-stake model which
+                                        enables a
+                                        consumption of only a small fraction of the energy used by their regular and
+                                        conventional blockchains in the industry.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div>
+                                <div class="benefit-icon d-flex justify-content-center ">
+                                    <img src="main/images/b-3.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text-center  ">
+                                    <h4 class="title fs-4 fw-bold">TOKEN MANAGEMENT & ECOSYSTEM</h4>
+                                    <p>
+                                        Storing and managing tokens on a blockchain provides greater transparency,
+                                        accuracy,
+                                        integrity than traditional forms of asset accounting and trading. These token
+                                        protocols power a variety of projects.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div>
+                                <div class="benefit-icon d-flex justify-content-center ">
+                                    <img src="main/images/b-2.png" alt="Safe and Secure">
+                                </div>
+                                <div class="text-center  ">
+                                    <h4 class="title fs-4 fw-bold">DEFI APPLICATIONS & NFTS.</h4>
+                                    <p>
+                                        To create more utility for our project, our network is scalable enough to
+                                        accommodate a wide variety of decentralized applications and NFT projects.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="mobileapp-section p-tb black-bg white-sec">
                 <div class="container">
                     <div class="row align-items-center flex-row-reverse">
-                        <div class="col-lg-5">
-                            <div class="iphone-img">
-                                <img src="{{ asset('main/images/logo.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
+                        <div class="col-lg-12">
                             <h3 class="section-heading">The usuage exceeds the scope of the prime ecosystem but not
                                 limited to the following</h3>
                             <p>Prime coin has achieved massive support and partnership from other organisations and
@@ -148,6 +433,12 @@
                 </div>
             </div>
 
+
+
+
+
+
+
             <div class="featured-product-sec p-tb white-sec dark-gray-bg-tone-2" id="featured-product">
                 <div id="gold-tech-bg"></div>
                 <div class="container">
@@ -155,8 +446,8 @@
                         <h3>Benefits of Using Our Solution</h3>
                     </div>
                     <div class="sub-txt text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut
-                            quis blandit dolor. Ut laoreet sagittis arcu eu tristique. </p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt ultrices. Ut
+                            quis blandit dolor. Ut laoreet sagittis arcu eu tristique. </p> --}}
                     </div>
                 </div>
                 <div class="container">
@@ -318,81 +609,121 @@
                     <div class="text-center">
                         <h2 class="section-heading">Road Map</h2>
                     </div>
-                    <div class="sub-txt text-center">
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus
-                            tincidunt ultrices. Ut quis blandit dolor. Ut laoreet sagittis arcu eu tristique.</p>
-                    </div>
                     <div class="mercury-roadmap owl-carousel">
                         <div class="roadmap-item odd">
                             <div class="roadmap-text">
                                 <div class="roadmap-day">
-                                    <div class="date">Crypto ICO Platform idea</div>
+                                    <div class="date">PHASE 1</div>
                                 </div>
                                 <div class="roadmap-item-text">
-                                    <h4>March 2021</h4>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4>March 2022</h4>
+                                    <p class="lead">White paper,Launchpad and initial utility development.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="roadmap-item even">
                             <div class="roadmap-text">
                                 <div class="roadmap-day">
-                                    <div class="date">ICO Realease</div>
+                                    <div class="date">PHASE 2</div>
                                 </div>
                                 <div class="roadmap-item-text">
-                                    <h4>January 2021</h4>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4>July 2023</h4>
+                                    <p class="lead">Commencement of presale & airdrop distribution.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="roadmap-item odd">
                             <div class="roadmap-text">
                                 <div class="roadmap-day">
-                                    <div class="date">Technical development</div>
+                                    <div class="date">PHASE 3</div>
                                 </div>
                                 <div class="roadmap-item-text">
-                                    <h4>December 2020</h4>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4>Coming Soon</h4>
+                                    <p class="lead">Development & implementation of further used cases.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="roadmap-item even">
                             <div class="roadmap-text">
                                 <div class="roadmap-day">
-                                    <div class="date">Development kit for integrations</div>
+                                    <div class="date">PHASE 4</div>
                                 </div>
                                 <div class="roadmap-item-text">
-                                    <h4>October 2020</h4>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4>Coming Soon</h4>
+                                    <p class="lead"> NFT distribution to $10K+ holders of primecoin.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="roadmap-item odd">
                             <div class="roadmap-text">
                                 <div class="roadmap-day">
-                                    <div class="date">Beta version of crypto ICO</div>
+                                    <div class="date">PHASE 5</div>
                                 </div>
                                 <div class="roadmap-item-text">
-                                    <h4>eptember 2020</h4>
-                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h4>Coming Soon</h4>
+                                    <p class="lead">Collaboration and blockchain project partnerships.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item even">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">PHASE 6</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>Coming Soon</h4>
+                                    <p class="lead">Global merchant adoption for enhanced utility.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item odd">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">PHASE 7</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>Coming Soon</h4>
+                                    <p class="lead">Primecoin crypto exchange launch with over 300+ trading pairs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item even">
+                            <div class="roadmap-text">
+                                <div class="roadmap-day">
+                                    <div class="date">PHASE 8</div>
+                                </div>
+                                <div class="roadmap-item-text">
+                                    <h4>Coming Soon</h4>
+                                    <p class="lead">NFT Marketplace, gaming and international traders hub.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="featured-product-sec p-tb white-sec dark-gray-bg-tone-2" id="featured-product">
-                <div id="gold-tech-bg"></div>
-                <div class="container">
-                    <div class="row align-items-center">
-                        <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinPriceBlock.js"></script>
-                        <div id="coinmarketcap-widget-coin-price-block" coins="1,1027,825,1839,3890,2,1831,5426"
-                            currency="USD" theme="light" transparent="false" show-symbol-logo="true">
-                        </div>
-                    </div>
-                </div>
+
             </div>
+            <!-- Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/"
+                        rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on
+                            TradingView</span></a></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+                    {
+                        "width": "100%",
+                        "height": "100%",
+                        "defaultColumn": "overview",
+                        "screener_type": "crypto_mkt",
+                        "displayCurrency": "USD",
+                        "colorTheme": "light",
+                        "locale": "en",
+                        "isTransparent": false
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
 
             <div class="token-sale p-tb" id="token">
                 <div class="container">
@@ -416,29 +747,27 @@
                         <div class="col-md-6">
 
                             <div class="col-sm-12 pt-5">
-                                <h2 class="section-heading">Currency Convertor</h2>
+                                <h2 class="section-heading fs-3 ">Currency Converter</h2>
                                 <div class="sub-txt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus tincidunt
-                                        ultrices. Ut quis blandit dolor. Ut Vestibulum ante ipsum primis in fauc</p>
                                 </div>
                             </div>
 
                             <div class="currency-box text-center">
-                                <div class="currency-icon">
+                                <div class="currency-icon mt-3">
                                     <img src="{{ asset('main/images/section-6/convert-icon.png') }}"
                                         alt="World Coverage" style="">
                                 </div>
                                 <div class="currency-form">
                                     <form method="" action="#">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="" id=""
+                                            <input type="text" id="usdt" class="form-control" name=""
                                                 placeholder="Enter Amount">
                                             <input type="text" class="form-control postpend" name=""
                                                 readonly="" value="USDT">
                                         </div>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="" id=""
-                                                placeholder="Enter Amount">
+                                            <input type="text" class="form-control" name="" id="pc"
+                                                placeholder=" readonly ">
                                             <input type="text" class="form-control postpend" name=""
                                                 readonly="" value="PC">
                                         </div>
@@ -459,16 +788,16 @@
                             <div class="sec-title text-center">
                                 <h1>Token Sales</h1>
                             </div>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu
+                            {{-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu
                                 mauris
-                                bibendum, tincidunt mauris at, tempor nunc.</p>
+                                bibendum, tincidunt mauris at, tempor nunc.</p> --}}
                         </div>
                         <div class="col-sm-10 wow fadeIn" data-wow-delay="0.5s">
                             <div class="pre-sale-timer-outer">
                                 <div class="pre-sale-timer style-2">
                                     <div class="row align-items-center">
                                         <div class="col-md-6">
-                                            <h3>Pre-Sale <span>will end in</span></h3>
+                                            <h3>Sales<span>will Start in</span></h3>
                                             <div id="clock" data-date="2023/7/5"></div>
                                             <div class="hero-right-btn"><a class="btn btn4" href="/signup">Register &
                                                     Buy Tokens Now</a></div>
@@ -797,6 +1126,40 @@
             });
 
         })(jQuery);
+    </script>
+
+    <script>
+        $(function() {
+            $('body').on('click', '.readmore', function() {
+                id = $(this).data('id');
+                console.log(id);
+                ele = $(`#${id}`)
+
+                ele.find('.more').show('slowly');
+                console.log(ele);
+            })
+
+
+
+            $('#usdt').on('keyup', function() {
+                usdt = $('#usdt');
+                amt_usdt = parseInt(usdt.val());
+                $.ajax({
+                    method: 'get',
+                    url: '/get_price',
+  
+                }).done(function(res) {
+                    price = amt_usdt * res.price
+
+                    price = (price == NaN) ? 0 : price;
+
+                    $('#pc').val(price)
+                }).fail(function(res) {
+                    console.log(res);
+                })
+            })
+
+        })
     </script>
 </body>
 
