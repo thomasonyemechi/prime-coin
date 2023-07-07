@@ -1,7 +1,6 @@
 @extends('layout.main')
 
 @section('page_content')
-
     <div class="container-fluid content-inner pb-0">
         <div class="row mb-4">
             <div class="col-lg-12">
@@ -63,7 +62,7 @@
                             </div>
                         </div>
                     </div> --}}
-                    <div class="col-xl-3">
+                    <div class="col-xl-4">
                         <div class="d-grid grid-3-auto gap-card">
                             <div class="dropdown">
                                 <a href="/deposit" class="btn btn-primary w-100">
@@ -71,8 +70,8 @@
                                 </a>
                             </div>
                             <div class="dropdown">
-                                <a href="/trade" class="btn btn-primary w-100" type="button">
-                                    Trade
+                                <a href="/convert" class="btn btn-primary w-100" type="button">
+                                    Buy Coin
                                 </a>
                             </div>
                         </div>
@@ -90,7 +89,8 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-center">
                                             <div class="">
-                                                <span class="fs-1 text-white fw-bold me-2" style="font-size: 20px">${{number_format($total,2)}}</span>
+                                                <span class="fs-1 text-white fw-bold me-2"
+                                                    style="font-size: 20px">${{ number_format($total, 2) }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -105,11 +105,14 @@
                                                 <img src="{{ asset('assets/images/coins/00.png') }}"
                                                     class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
                                                 <span class="fs-6 fw-bold me-2" style="line-height: 20px">Primecoin <br>
-                                                    <span style="font-weight: lighter">${{  number_format(1/$rate,2) }}</span></span>
+                                                    <span
+                                                        style="font-weight: lighter">${{ number_format(1 / $rate, 2) }}</span></span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
-                                                <span class="fs-6 fw-bold me-2" style="line-height: 20px">{{number_format($pc_balance, 2)}} PMC <br>
-                                                    <span style="font-weight: lighter">$ {{number_format($pc_total,2) }}</span></span>
+                                                <span class="fs-6 fw-bold me-2"
+                                                    style="line-height: 20px">{{ number_format($pc_balance, 2) }} PMC <br>
+                                                    <span style="font-weight: lighter">$
+                                                        {{ number_format($pc_total, 2) }}</span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -123,11 +126,14 @@
                                                 <img src="{{ asset('assets/images/coins/01.png') }}"
                                                     class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
                                                 <span class="fs-6 fw-bold me-2" style="line-height: 20px">USDT <br>
-                                                    <span style="font-weight: lighter">$1</span></span>
+                                                    <span
+                                                        style="font-weight: lighter">${{ number_format(1, 2) }}</span></span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
-                                                <span class="fs-6 fw-bold me-2" style="line-height: 20px"> {{ number_format(usdtBalance($user_id)) }} USDT <br>
-                                                    <span style="font-weight: lighter">${{ number_format($usdt_balance) }}</span></span>
+                                                <span class="fs-6 fw-bold me-2" style="line-height: 20px">
+                                                    {{ number_format(usdtBalance($user_id), 2) }} USDT <br>
+                                                    <span
+                                                        style="font-weight: lighter">${{ number_format($usdt_balance, 2) }}</span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -141,11 +147,14 @@
                                                 <img src="{{ asset('assets/images/coins/02.png') }}"
                                                     class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
                                                 <span class="fs-6 fw-bold me-2" style="line-height: 20px">Airdrop <br>
-                                                    <span style="font-weight: lighter">$1</span></span>
+                                                    <span
+                                                        style="font-weight: lighter">${{ number_format(1, 2) }}</span></span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
-                                                <span class="fs-6 fw-bold me-2" style="line-height: 20px">{{ number_format($spc_balance, 2) }} SPC <br>
-                                                    <span style="font-weight: lighter">${{ number_format($spc_balance, 2) }}</span></span>
+                                                <span class="fs-6 fw-bold me-2"
+                                                    style="line-height: 20px">{{ number_format($spc_balance, 2) }} SPC <br>
+                                                    <span
+                                                        style="font-weight: lighter">${{ number_format($spc_balance, 2) }}</span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -262,6 +271,16 @@
                         </div> --}}
                     </div>
                     <div class="col-lg-12">
+                        <div class="card card-block card-stretch custom-scroll ">
+                            <div class="card-body">
+                                <h4>Referral ID</h4>
+                            <div class="d-flex justify-content-lg-start">
+                                <input type="text" id="wallet_address" readonly class="form-control"
+                                    value="{{auth()->user()->id}}">
+                                <button class="btn btn-primary" onclick="myFunction()" type="submit">Copy</button>
+                            </div>
+                            </div>
+                        </div>
                         <div class="card card-block card-stretch custom-scroll">
                             <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
                                 <div class="caption">
@@ -281,9 +300,9 @@
                                         <tbody>
                                             @foreach ($transactions as $trno)
                                                 <tr>
-                                                    <td>{{number_format($trno->amount, 2)}} {{$trno->currency}}   </td>
-                                                    <td> {{$trno->remark}} </td>
-                                                    <td> {{$trno->created_at}} </td>
+                                                    <td>{{ number_format($trno->amount, 2) }} {{ $trno->currency }} </td>
+                                                    <td> {{ $trno->remark }} </td>
+                                                    <td> {{ $trno->created_at }} </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -331,3 +350,24 @@
 
     </div>
 @endsection
+
+
+
+@push('scripts')
+    <script>
+        function myFunction() {
+            // Get the text field
+            var copyText = document.getElementById("wallet_address");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Referral ID has been copied");
+        }
+    </script>
+@endpush

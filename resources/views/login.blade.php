@@ -30,15 +30,11 @@
             <div class="form-part">
                 <div class="cp-header text-center">
                     <div class="logo">
-                        <a href="/">
-                            <h4>Prime Cion</h4>
+                        <a href="/" class="d-flex justify-content-center">
+                            <img src="{{asset('assets/images/coins/00.png')}}" style="width: 25px; height:25px" alt="">
+                            <h4>Primecoin</h4>
                         </a>
                     </div>
-                </div>
-                <div class="cp-heading text-center">
-                    <h5>Welcome Back :)</h5>
-                    <p>Too keep connected with us please login with your personal information by username and
-                        password.</p>
                 </div>
                 <div class="cp-body">
                     @if (session('success'))

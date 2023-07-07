@@ -3,6 +3,7 @@
 
 // file contains all methods cast and helper function
 
+use App\Models\Purchase;
 use App\Models\Wallet;
 
 function depositStatus($status)
@@ -21,6 +22,12 @@ function spcBalance($user_id)
 {
     $balance = Wallet::where(['user_id' => $user_id, 'type' => '3' ])->sum('amount');
     return $balance;
+}
+
+function coinTotalPurchase($user_id)
+{
+    $total = Purchase::where(['user_id' => $user_id])->sum('amount');
+    return $total;
 }
 
 

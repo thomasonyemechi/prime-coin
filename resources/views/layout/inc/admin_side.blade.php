@@ -52,6 +52,29 @@
 
 
             <li class="nav-item">
+                <a class="nav-link  collapsed " href="#!" data-bs-toggle="collapse" data-bs-target="#navCourses2"
+                    aria-expanded="false" aria-controls="navCourses2">
+                    <i class="nav-icon fe fe-book me-2"></i> Manage Withdrawal
+                </a>
+                <div id="navCourses2" class="collapse " data-bs-parent="#sideNavbar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin/withdrawal/history">
+                                Withdrawal History
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin/withdrawal/pending">
+                                Pending Withdrawals
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+
+            <li class="nav-item">
                 <a class="nav-link  " href="/admin/set_price">
                     <i class="nav-icon fe fe-settings me-2"></i> Set Coin Price
                 </a>

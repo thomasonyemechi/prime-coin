@@ -73,7 +73,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group ">
-                                        <label for="text">Receiver's Username*</label>
+                                        <label for="text">Receiver's ID*</label>
                                         <input type="text" name="receiver" class="form-control receiver">
                                         <div class="display_name"></div>
                                     </div>
@@ -144,7 +144,7 @@
                     method: 'get',
                     url: `/get_user?username=${val}`,
                     beforeSend: () => {
-                        $(this).html('<i>Validating Username ... </1>')
+                        $(this).html('<i>Validating ID ... </1>')
                     }
                 }).done(res => {
                     $('.d-1').hide('slowly')
@@ -154,7 +154,7 @@
                     $('input[name="user_id"]').val(res.id);
                     // dis.html(`<i class="text-success">Send to ${res.username}</i>`)
                 }).fail(res => {
-                    alert('This username does not exist in our database');
+                    alert('This id does not exist in our database');
                     // dis.html('<i class="text-danger" >This username does not exist</i>')
                     btn.html('Continue');
                 })

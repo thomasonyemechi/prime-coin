@@ -100,8 +100,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="text">Your Wallet Address *</label>
-                                    <input type="text" name="wallet" class="form-control" value="{{ auth()->user()->wallet }}" readonly>
-                                
+                                    <input type="text" name="wallet" class="form-control"
+                                        value="{{ auth()->user()->wallet }}" readonly>
+
                                 </div>
 
                                 <button type="submit" class="btn btn-primary depositusdtbtn rounded">Deposit</button>
@@ -115,14 +116,17 @@
                                 Send the exact amount of USDT (TRC20) tokens you want to deposit to the wallet address
                                 below: <br><br>
 
-                                ####
+                            <div class="d-flex justify-content-lg-start">
+                                <input type="text" id="wallet_address" readonly class="form-control"   value="TGnKCtgYQgJZGn5EH9xb93aRR8EB6fMxda">
+                                <button class="btn btn-primary" onclick="myFunction()" type="submit" >Copy</button>
+                            </div>
 
-                                <br><br>
-                                Check back in few minutes, your account will credited as soon as your deposit is confirmed
-                                on the blockchain.
+                            <br><br>
+                            Check back in few minutes, your account will credited as soon as your deposit is confirmed
+                            on the blockchain.
                             </p>
 
-                            <button class="btn btn-secondary mt-2 done" >Done</button>
+                            <button class="btn btn-secondary mt-2 done">Done</button>
                         </div>
                     </div>
                 </div>
@@ -143,11 +147,11 @@
             if (er > 0) {
                 $('#depositModal').modal('show')
             }
-            if(vr > 0) {
+            if (vr > 0) {
                 $('#dep_1').hide('slowly');
                 $('#dep_2').show('slowly');
             }
-            if(sr > 0) {
+            if (sr > 0) {
                 $('#dep_1').hide('slowly');
                 $('#dep_2').hide('slowly');
                 $('#dep_3').show('slowly');
@@ -160,7 +164,7 @@
             })
 
 
-            $('.got02').on('click', function () {
+            $('.got02').on('click', function() {
                 $('#dep_1').hide('slowly');
                 $('#dep_2').show('slowly');
             })
@@ -172,5 +176,23 @@
                 $('#dep_3').hide('slowly');
             })
         })
+    </script>
+
+
+    <script>
+        function myFunction() {
+            // Get the text field
+            var copyText = document.getElementById("wallet_address");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+
+            // Alert the copied text
+            alert("Wallet address has been copied");
+        }
     </script>
 @endpush

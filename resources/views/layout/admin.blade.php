@@ -25,7 +25,7 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('admin/css/theme.min.css') }}">
-    <title>Dashboard | Geeks - Bootstrap 5 Admin Dashboard Template</title>
+    <title>Primecoin Admin</title>
 
     <style>
         .al_bg {

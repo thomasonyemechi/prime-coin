@@ -7,7 +7,7 @@
                 <div class="mb-4 d-flex justify-content-between align-items-center">
                     <div class="mb-2 mb-lg-0">
                         <h1 class="mb-1 h2 fw-bold">
-                            Manage Deposits
+                            Manage Withdrawals
                         </h1>
                         <!-- Breadcrumb  -->
                         <nav aria-label="breadcrumb">
@@ -15,7 +15,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="/admin/dashboard">Dashboard</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">Pending Deposits</a></li>
+                                <li class="breadcrumb-item"><a href="#">Pending Withdrawals</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -46,7 +46,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($deposits as $dep)
+                                        @foreach ($withdrawals as $dep)
                                         <tr>
                                             <td class="align-middle border-top-0">
                                                 <div class="d-flex align-items-center">
@@ -60,7 +60,7 @@
                                                 {{ depositAmount($dep->amount) }}
                                             </td>
                                             <td class="align-middle border-top-0">
-                                                {{ $dep->wallet }}
+                                                {{ $dep->wallet_address }}
                                             </td>
                                             <td class="align-middle border-top-0">
                                                 {!! depositStatus($dep->status) !!}
@@ -90,7 +90,7 @@
                                 </table>
                                 <!-- Pagination -->
                                 <div class="d-flex justify-content-center  pt-3">
-                                    {{ $deposits->links('pagination::bootstrap-4') }}
+                                    {{ $withdrawals->links('pagination::bootstrap-4') }}
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                         <div class="form-group" >
                             <label for="">State Reason For Rejection</label>
                             <input type="text" class="form-control" name="remark" >
-                            <input type="hidden" class="form-control" name="deposit_id" >
+                            <input type="hidden" class="form-control" name="id" >
                         </div>
 
                         <div class="mt-2 d-flex justify-content-end">  
@@ -131,18 +131,16 @@
             <div class="modal-content">
 
                 <div class="modal-body">
-                    <form method="POST" action="/admin/deposit/approve_deposit"  > @csrf
-                        <h3>Approve Deposit</h3>
+                    <form method="POST" action="/admin/withdrawal/approve_withdrawal"  > @csrf
+                        <h3>Approve</h3>
                         <p class="text-success" ></p>
 
                         <div class="form-group" >
-                            <label for="">Remark</label>
-                            <input type="text" class="form-control" name="remark" >
-                            <input type="hidden" class="form-control" name="deposit_id" >
+                            <input type="hidden" class="form-control" name="id" >
                         </div>
                         
                         <div class="mt-2 d-flex justify-content-end">  
-                            <button class="btn btn-sm btn-success" >Approve Deposit</button>
+                            <button class="btn btn-sm btn-success" >Approve</button>
                         </div>
                     </form>
                 </div>
@@ -164,8 +162,8 @@
 
                 modal = $('#rejectDepositModal')
                 modal.modal('show');
-                modal.find('p').html(`This deposit of ${data.amount} USDT will be rejected and no funds will be transfer to  ${data.user.username} `)
-                modal.find('input[name="deposit_id"]').val(data.id);
+                modal.find('p').html(`Reject this withdrawal `)
+                modal.find('input[name="id"]').val(data.id);
             })
 
 
@@ -175,8 +173,8 @@
 
                 modal = $('#approveDepositModal')
                 modal.modal('show');
-                modal.find('p').html(`This deposit will be aproved and  ${data.amount} USDT will be transfer to  ${data.user.username} `)
-                modal.find('input[name="deposit_id"]').val(data.id);
+                modal.find('p').html(`You will transfer  ${data.amount} USDT to  ${data.wallet_address} `)
+                modal.find('input[name="id"]').val(data.id);
             })
         })
     </script>

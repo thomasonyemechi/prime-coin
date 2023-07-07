@@ -4,10 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Prime Coin</title>
+    <title>Primecoin</title>
     <!-- Favicon -->
-    <link rel="shortcut icon"
-        href="https://templates.iqonic.design/coinex-dashboard/dashboard/html/dist/assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/coins/00.png') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/core/libs.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/coinex.mine209.css?v=1.0.0') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.mine209.css?v=1.0.0') }}">

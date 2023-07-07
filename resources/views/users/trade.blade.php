@@ -22,7 +22,7 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="{{ asset('assets/images/coins/01.png') }}"
+                                        <img src="{{ asset('assets/images/coins/02.png') }}"
                                             class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
                                         <span class="fs-6 fw-bold me-2" style="line-height: 20px">SPC balance <br>
                                             <span style="font-weight: lighter"> {{  number_format($spc_balance,2) }} <small>SPC</small> </span></span>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
 
-                        <form method="post" id="buypmc" action="{{ route('buy_primecoin') }}">@csrf
+                        <form method="post" id="buypmc" action="{{ route('trade_spc') }}">@csrf
 
                             <div class="form-group">
                                 <label for="text"> Amount to Trade </label>

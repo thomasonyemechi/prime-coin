@@ -15,7 +15,7 @@
 
 
                         <div class="d-flex justify-content-start mb-2 gap-2">
-                            <span class="fs-6 fw-bold me-2" >1 USDT = {{$rate}} PC</span>
+                            <span class="fs-6 fw-bold me-2">1 USDT = {{ $rate }} PC</span>
                         </div>
 
 
@@ -27,18 +27,37 @@
                                         <img src="{{ asset('assets/images/coins/01.png') }}"
                                             class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
                                         <span class="fs-6 fw-bold me-2" style="line-height: 20px">USDT balance <br>
-                                            <span style="font-weight: lighter"> {{  number_format($usdt_balance,2) }} <small>USDT</small> </span></span>
+                                            <span style="font-weight: lighter"> {{ number_format($usdt_balance, 2) }}
+                                                <small>USDT</small> </span></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        @php
+                            $price = coinTotalPurchase(auth()->user()->id);
+                        @endphp
+
+                        @if ($price > 0)
+                            <div class="d-flex justify-content-start mb-2 gap-2">
+                                <small class=" me-2">Maximum Purchase Left = $ {{ number_format(15000 - $price) }} </small>
+                            </div>
+                        @else
+                            <div class="d-flex justify-content-start mb-2 gap-2">
+                                <span class="fs-6  me-2">Minimum Purchase = $20 </span>
+                            </div>
+                        @endif
+
+
+
+
+
                         <form method="post" id="buypmc" action="{{ route('buy_primecoin') }}">@csrf
 
                             <div class="form-group">
                                 <label for="text"> Amount In USDT </label>
-                                <input type="number" name="usdt_amount" class="form-control" min="20" max="{{ $usdt_balance }}" name="usdt" id="usdt"
-                                    value="{{ old('wallet') }}">
+                                <input type="number" name="usdt_amount" class="form-control" min="20"
+                                    max="{{ $usdt_balance }}" name="usdt" id="usdt" value="{{ old('wallet') }}">
                                 @error('wallet')
                                     <i class="text-danger ">{{ $message }} </i>
                                 @enderror
@@ -70,6 +89,7 @@
                                     <tr>
                                         <th scope="col">USDT</th>
                                         <th scope="col">Rate</th>
+                                        <th scope="col">Price</th>
                                         <th scope="col">PC</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Timestamp</th>
@@ -78,11 +98,12 @@
                                 <tbody>
                                     @foreach ($purchases as $pur)
                                         <tr>
-                                            <td> {{$pur->amount}} USDT </td>
-                                            <td> {{$pur->rate}}/USDT </td>
-                                            <td> {{number_format($pur->amount*$pur->rate, 2)}} PC </td>
+                                            <td> {{ $pur->amount }} USDT </td>
+                                            <td> {{ $pur->rate }}/USDT </td>
+                                            <td> $  {{ number_format(1/$pur->rate, 2) }} </td>
+                                            <td> {{ number_format($pur->amount * $pur->rate, 2) }} PC </td>
                                             <td>
-                                                <div class="badge  bg-success" >
+                                                <div class="badge  bg-success">
                                                     successful
                                                 </div>
                                             </td>
@@ -127,7 +148,7 @@
                 $('.buypmcbtn').attr('disabled', 'disabled');
             })
 
-            
+
             $('#usdt').on('keyup', function() {
                 usdt = $('#usdt');
                 amt_usdt = parseInt(usdt.val());
@@ -136,7 +157,7 @@
                     url: '/get_price'
                 }).done(function(res) {
                     price = amt_usdt * res.price
-                    
+
                     price = (price == NaN) ? 0 : price;
 
                     $('#pc').val(price)

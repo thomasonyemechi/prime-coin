@@ -61,6 +61,7 @@ class AuthController extends Controller
     function get_user()
     {
         $res = User::where('username', $_GET['username'])->first(['id', 'username']);
+        if($res->id == auth()->user()->id) { abort(404); }
         if(!$res){ abort(404); }
         return response($res);
     }

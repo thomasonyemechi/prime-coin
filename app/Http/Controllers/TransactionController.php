@@ -14,7 +14,6 @@ class TransactionController extends Controller
 
         Validator::make($request->all(), [
             'amount' => 'required|integer|min:2',
-            'wallet' => 'required|string|min:10'
         ])->validate();
 
         //first check for pending transactions.....
@@ -26,7 +25,7 @@ class TransactionController extends Controller
         Deposit::create([
             'user_id' => auth()->user()->id,
             'amount' => $request->amount,
-            'wallet' => $request->wallet,
+            'wallet' => auth()->user()->wallet,
             'status' => 'pending',
         ]);
         ///qeue mail to send to admin and users

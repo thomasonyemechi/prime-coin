@@ -2,7 +2,7 @@
     <div class="sidebar-header d-flex align-items-center justify-content-start">
         <a href="/dashboard" class="navbar-brand dis-none align-items-center">
             
-            <h4 class="logo-title m-0">Prime Coin</h4>
+            <h4 class="logo-title m-0">Primecoin</h4>
         </a>
         <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
             <i class="icon">
@@ -130,7 +130,7 @@
                 </li>
 
                 <li class="nav-item ">
-                    <a class="nav-link" aria-current="page" href="#">
+                    <a class="nav-link" aria-current="page" href="/withdrawal">
                         <i class="icon">
                             <svg width="22" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

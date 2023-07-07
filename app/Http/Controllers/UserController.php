@@ -11,9 +11,11 @@ use App\Models\Transfer;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Models\WalletAddress;
+use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 use function Symfony\Component\String\b;
 
@@ -69,6 +71,14 @@ class UserController extends Controller
     }
 
 
+    function withdrwal()
+    {
+        $usdt_balance = usdtBalance(auth()->user()->id);
+        $withdrawals = Withdrawal::where(['user_id' => auth()->user()->id])->orderby('id', 'desc')->limit(25)->get();
+        return view('users.withdrwal', compact(['usdt_balance', 'withdrawals']));
+    }
+
+
     function transferIndex()
     {
         $user_id = auth()->user()->id;
@@ -95,7 +105,6 @@ class UserController extends Controller
     {
         $val = Validator::make($request->all(), [
             'amount' => 'required|integer|min:20',
-            'receiver' => 'required|exists:users,username',
             'password' => 'required|string'
         ])->validate();
 
@@ -224,10 +233,69 @@ class UserController extends Controller
                 'action' => 'credit'
             ]);
         }
-
-
-
-
         return redirect('/dashboard')->with('success', 'Coin purchase was scuessfull');
+    }
+
+
+    public function tradeSpc(Request $request)
+    {
+        $val = Validator::make($request->all(), [
+            'amount' => 'integer|required|min:20'
+        ])->validate();
+
+        $user_id = auth()->user()->id;
+        if($request->amount > spcBalance($user_id)) 
+        {
+            return back()->with('error', 'Insuffcient SPC balance');
+        }
+
+        /////////log trade
+        $trade = Trade::create([
+            'user_id' => $user_id,
+            'amount' => $request->amount,
+        ]);
+
+        /////// remove spc from wallet        
+        Wallet::create([
+            'currency' => 'spc',
+            'amount' => -$request->amount,
+            'type' => 3,
+            'user_id' => $user_id,
+            'remark' => 'Trade',
+            'ref_id' => $trade->id,
+            'action' => 'debit'
+        ]);
+
+        //credit user with usdt
+        Wallet::create([
+            'currency' => 'usdt',
+            'amount' => $request->amount,
+            'type' => 1,
+            'user_id' => $user_id,
+            'remark' => 'spc converted',
+            'ref_id' => $trade->id,
+            'action' => 'debit'
+        ]);
+
+        return back()->with('success', 'SPC trade has been made');
+    }
+
+
+    function make_withdrawal(Request $request)
+    {
+        Validator::make($request->all(), [
+            'amount' => 'required|min:20'
+        ]);
+        ///logg withdrwal
+        if($request->amount > (usdtBalance(auth()->user()->id)-1) ){
+            return back()->with('error', 'Insufficient fund');
+        }
+        $with = Withdrawal::create([
+            'amount' => $request->amount,
+            'status' => 'pending', 
+            'user_id' => auth()->user()->id,
+            'wallet_address' => auth()->user()->wallet,
+        ]);
+        return back()->with('success', 'Your withdrwal request has been logged, and would be reviewed');
     }
 }
