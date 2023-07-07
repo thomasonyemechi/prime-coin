@@ -16,7 +16,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Amount</th>
-                                        <th scope="col">Downline</th>
+                                        <th scope="col">Participant</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Timestamp</th>
                                     </tr>

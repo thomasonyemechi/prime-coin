@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="d-flex justif   y-content-end ">
-                                <button type="submit" class="btn buypmcbtn btn-primary">Withdrawal</button>
+                                <button type="submit" class="btn buypmcbtn btn-primary">Withdraw</button>
                             </div>
                         </form>
                     </div>

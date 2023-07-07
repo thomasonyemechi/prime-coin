@@ -271,16 +271,7 @@
                         </div> --}}
                     </div>
                     <div class="col-lg-12">
-                        <div class="card card-block card-stretch custom-scroll ">
-                            <div class="card-body">
-                                <h4>Referral ID</h4>
-                            <div class="d-flex justify-content-lg-start">
-                                <input type="text" id="wallet_address" readonly class="form-control"
-                                    value="{{auth()->user()->id}}">
-                                <button class="btn btn-primary" onclick="myFunction()" type="submit">Copy</button>
-                            </div>
-                            </div>
-                        </div>
+            
                         <div class="card card-block card-stretch custom-scroll">
                             <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
                                 <div class="caption">
