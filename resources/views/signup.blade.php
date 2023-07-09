@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="cp-heading text-center">
-                    <h5>Welcome to Prime Coin</h5>
+                    <h5>Welcome to Primecoin</h5>
                 </div>
                 <div class="cp-body">
                     @if (session('success'))

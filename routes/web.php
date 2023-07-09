@@ -42,6 +42,7 @@ Route::get('/get_user', [AuthController::class, 'get_user']);
 
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
+    Route::view('/copy', 'users.copy');
     Route::get('/dashboard', [UserController::class, 'indexU']);
     Route::get('/deposit', [UserController::class, 'depositIndex'])->middleware('wallet');
 

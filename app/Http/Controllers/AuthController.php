@@ -37,10 +37,14 @@ class AuthController extends Controller
             'password' => 'string|min:6|confirmed',
         ])->validate();
 
+        if($request->referral_id) {
+            $sponsor = User::where(['username' => $request->referral_id])->first()->id;
+        }
+
         User::create([
             'username' => $request->username,
             'password' => Hash::make($request->password),
-            'sponsor' => $request->referral_id ?? 1
+            'sponsor' => $sponsor ?? 1
         ]);
 
         return redirect('/login')->with('success', 'You have been registered sucessfuly, Proceed to login');
@@ -54,7 +58,7 @@ class AuthController extends Controller
      
         $request->session()->regenerateToken();
      
-        return redirect('/')->with('success', 'You have been logged out successfuly ');
+        return redirect('/login')->with('success', 'You have been logged out successfuly ');
     }
 
 

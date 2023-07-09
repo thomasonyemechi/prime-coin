@@ -37,9 +37,10 @@ class UserController extends Controller
 
         $usdt_balance = usdtBalance($user_id);
 
-        $total = $pc_total + $usdt_balance;
-
         $spc_balance = spcBalance($user_id);
+
+        $total = $pc_total + $usdt_balance + $spc_balance;
+
 
         $transactions = Wallet::where(['user_id' => auth()->user()->id])->orderby('id', 'desc')->limit(10)->get();
         return view('users.index', compact(['transactions', 'pc_balance', 'user_id', 'rate', 'pc_total', 'total', 'usdt_balance', 'spc_balance']));
@@ -212,7 +213,7 @@ class UserController extends Controller
         ]);
 
         ///pay user sponsor pay 20%
-        if (auth()->user()->sponsor != 1) {
+        // if (auth()->user()->sponsor != 1) {
 
             $percent = ($request->usdt_amount * 20) / 100; //caluclating percentage
 
@@ -232,15 +233,15 @@ class UserController extends Controller
                 'ref_id' => $earned->id,
                 'action' => 'credit'
             ]);
-        }
-        return redirect('/dashboard')->with('success', 'Coin purchase was scuessfull');
+        // }
+        return redirect('/dashboard')->with('success', 'Coin purchase was successful');
     }
 
 
     public function tradeSpc(Request $request)
     {
         $val = Validator::make($request->all(), [
-            'amount' => 'integer|required|min:20'
+            'amount' => 'integer|required'
         ])->validate();
 
         $user_id = auth()->user()->id;
@@ -296,6 +297,6 @@ class UserController extends Controller
             'user_id' => auth()->user()->id,
             'wallet_address' => auth()->user()->wallet,
         ]);
-        return back()->with('success', 'Your withdrwal request has been logged, and would be reviewed');
+        return back()->with('success', 'Your withdrawal request has been logged, and would be reviewed');
     }
 }

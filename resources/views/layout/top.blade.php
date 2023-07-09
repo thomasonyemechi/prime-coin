@@ -12,9 +12,9 @@
                 </i>
             </div>
             <a href="/dashboard">
-                <h4 class="title">
-                    Dashboard
-                </h4>
+                <h6 class="title">
+                    Dashboard - {{auth()->user()->username}}
+                </h6>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
