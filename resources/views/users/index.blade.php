@@ -104,7 +104,7 @@
                                             <div class="d-flex align-items-center gap-2">
                                                 <img src="{{ asset('assets/images/coins/00.png') }}"
                                                     class="img-fluid avatar avatar-30 avatar-rounded" style="width: 30px">
-                                                <span class="fs-6 fw-bold me-2" style="line-height: 20px">Primecoin <br>
+                                                <span class="fs-6 fw-bold me-2" style="line-height: 20px"><a href="/convert" class="text-white"  >Primecoin</a> <br>
                                                     <span
                                                         style="font-weight: lighter">${{ number_format(1 / $rate, 2) }}</span></span>
                                             </div>

@@ -117,9 +117,11 @@
                                 below: <br><br>
 
                             <div class="d-flex justify-content-lg-start">
-                                <input type="text" id="wallet_address" readonly class="form-control"   value="TGnKCtgYQgJZGn5EH9xb93aRR8EB6fMxda">
-                                <button class="btn btn-primary" onclick="myFunction()" type="submit" >Copy</button>
+                                <input type="text" id="input_field" readonly class="form-control"
+                                    value="TGnKCtgYQgJZGn5EH9xb93aRR8EB6fMxda">
+                                <button class="btn btn-primary" onclick="yourFunction()" type="submit">Copy</button>
                             </div>
+
 
                             <br><br>
                             Check back in few minutes, your account will credited as soon as your deposit is confirmed
@@ -179,20 +181,15 @@
     </script>
 
 
+
     <script>
-        function myFunction() {
-            // Get the text field
-            var copyText = document.getElementById("wallet_address");
+        const input_field = document.getElementById('input_field')
 
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
+        function yourFunction() {
+            input_field.select(); // select the input field
+            input_field.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(input_field.value)
 
-            // Copy the text inside the text field
-            navigator.clipboard.writeText(copyText.value);
-
-            // Alert the copied text
-            alert("Wallet address has been copied");
         }
     </script>
 @endpush

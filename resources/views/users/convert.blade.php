@@ -83,6 +83,22 @@
                         </div>
                     </div>
                     <div class="card-body">
+
+
+                        <div class="card border-bottom border-4 border-0 border-warning">
+                            <div class="card-body">
+                               <div class="d-flex justify-content-between align-items-center">
+                                  <div>
+                                     <span>Total Coin Purchase   </span>
+                                  </div>
+                                  <div>
+                                     <span class="counter" style="visibility: visible;"> $ {{ ($price) }} </span>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+
+
                         <div class="table-responsive">
                             <table class="table data-table mb-0">
                                 <thead>

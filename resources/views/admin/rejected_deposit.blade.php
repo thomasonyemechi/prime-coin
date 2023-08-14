@@ -1,37 +1,19 @@
-@extends('layout.admin')
+@extends('layout.admin02')
+
 @section('page_content')
-    <div class="container-fluid p-4">
-        <div class="row">
-            <!-- Page Header -->
-            <div class="col-lg-12 col-md-12 col-12">
-                <div class="mb-4 d-flex justify-content-between align-items-center">
-                    <div class="mb-2 mb-lg-0">
-                        <h1 class="mb-1 h2 fw-bold">
-                            Rejected Deposits
-                        </h1>
-                        <!-- Breadcrumb  -->
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="/admin/dashboard">Dashboard</a>
-                                </li>
-                                <li class="breadcrumb-item"><a href="#">Deposits Rejected</a></li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid content-inner pb-0">
+        <div class="row mb-4">
+            <div class="col-lg-12">
 
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-12">
-                <!-- Tab -->
-                <div class="tab-content">
+                <div class="col-lg-12">
+                    <div class="card card-block card-stretch custom-scroll">
+                        <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                            <div class="caption">
+                                <h4 class="font-weight-bold mb-2">Rejected Deposits</h4>
+                            </div>
 
-                    <div class="tab-pane show active fade" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
-                        <!-- card -->
-                        <div class="card">
-
+                        </div>
+                        <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table mb-0 text-nowrap">
                                     <thead class="table-light">
@@ -46,30 +28,30 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($deposits as $dep)
-                                        <tr>
-                                            <td class="align-middle border-top-0">
-                                                <div class="d-flex align-items-center">
-                                                    <h5 class="mb-0"> {{ $loop->iteration }} </h5>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {{ $dep->user->username }}
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {{ depositAmount($dep->amount) }}
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {{ $dep->wallet }}
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {!! depositStatus($dep->status) !!}
-                                            </td>
+                                            <tr>
+                                                <td class="align-middle border-top-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <h5 class="mb-0"> {{ $loop->iteration }} </h5>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {{ $dep->user->username }}
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {{ depositAmount($dep->amount) }}
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {{ $dep->wallet }}
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {!! depositStatus($dep->status) !!}
+                                                </td>
 
-                                            <td class="align-middle border-top-0">
-                                                {{$dep->created_at }}
-                                            </td>
-             
-                                        </tr>
+                                                <td class="align-middle border-top-0">
+                                                    {{ $dep->created_at }}
+                                                </td>
+
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -84,14 +66,4 @@
             </div>
         </div>
     </div>
-
-
-    
 @endsection
-
-
-@push('scripts')
-    <script>
-        
-    </script>
-@endpush

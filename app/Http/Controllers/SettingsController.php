@@ -17,6 +17,19 @@ class SettingsController extends Controller
     }
 
 
+    function setReceivingWalletAddress(Request $request)
+    {
+        Validator::make($request->all(), [
+            'wallet_address' => 'required|string|min:10'
+        ])->validate();
+        $coin = CoinInfo::first();
+        $coin->update([
+            'wallet_address' => $request->wallet_address
+        ]);
+        return back()->with('sucess', 'Receving wallet address has been updated');
+    }
+
+
     function updateCoinPrice(Request $request)
     {
         Validator::make($request->all(), [

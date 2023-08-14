@@ -1,36 +1,19 @@
-@extends('layout.admin')
+@extends('layout.admin02')
+
 @section('page_content')
-    <div class="container-fluid p-4">
-        <div class="row">
-            <!-- Page Header -->
-            <div class="col-lg-12 col-md-12 col-12">
-                <div class="mb-4 d-flex justify-content-between align-items-center">
-                    <div class="mb-2 mb-lg-0">
-                        <h1 class="mb-1 h2 fw-bold">
-                            Manage Withdrawals
-                        </h1>
-                        <!-- Breadcrumb  -->
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="/admin/dashboard">Dashboard</a>
-                                </li>
-                                <li class="breadcrumb-item"><a href="#">Pending Withdrawals</a></li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid content-inner pb-0">
+        <div class="row mb-4">
+            <div class="col-lg-12">
 
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-12">
-                <!-- Tab -->
-                <div class="tab-content">
+                <div class="col-lg-12">
+                    <div class="card card-block card-stretch custom-scroll">
+                        <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                            <div class="caption">
+                                <h4 class="font-weight-bold mb-2">Withdarwals History</h4>
+                            </div>
 
-                    <div class="tab-pane show active fade" id="tabPaneList" role="tabpanel" aria-labelledby="tabPaneList">
-                        <!-- card -->
-                        <div class="card">
+                        </div>
+                        <div class="card-body">
 
                             <div class="table-responsive">
                                 <table class="table mb-0 text-nowrap">
@@ -47,48 +30,55 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($withdrawals as $dep)
-                                        <tr>
-                                            <td class="align-middle border-top-0">
-                                                <div class="d-flex align-items-center">
-                                                    <h5 class="mb-0"> {{ $loop->iteration }} </h5>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {{ $dep->user->username }}
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {{ depositAmount($dep->amount) }}
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {{ $dep->wallet_address }}
-                                            </td>
-                                            <td class="align-middle border-top-0">
-                                                {!! depositStatus($dep->status) !!}
-                                            </td>
+                                            <tr>
+                                                <td class="align-middle border-top-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <h5 class="mb-0"> {{ $loop->iteration }} </h5>
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {{ $dep->user->username }}
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {{ depositAmount($dep->amount) }}
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {{ $dep->wallet_address }}
+                                                </td>
+                                                <td class="align-middle border-top-0">
+                                                    {!! depositStatus($dep->status) !!}
+                                                </td>
 
-                                            <td class="align-middle border-top-0">
-                                                {{$dep->created_at }}
-                                            </td>
-                                            <td class="text-muted px-4 py-3 align-middle border-top-0">
-                                                <span class="dropdown dropstart">
-                                                    <a class="text-muted text-decoration-none" href="#" role="button"
-                                                        id="courseDropdown" data-bs-toggle="dropdown"
-                                                        data-bs-offset="-20,20" aria-expanded="false">
-                                                        <i class="fe fe-more-vertical"></i></a>
-                                                    <span class="dropdown-menu" aria-labelledby="courseDropdown"><span
-                                                            class="dropdown-header">Action</span>
-                                                        <a class="dropdown-item text-success approvebtn" data-data='{{ json_encode($dep) }}' href="#"><i
-                                                                class="fe fe-check dropdown-item-icon"></i>Approve</a>
-                                                        <a class="dropdown-item text-danger rejectbtn " data-data='{{ json_encode($dep) }}' href="javascript:;"><i
-                                                                class="fe fe-x dropdown-item-icon"></i>Reject</a>
-                                                    </span>
-                                                </span>
-                                            </td>
-                                        </tr>
+                                                <td class="align-middle border-top-0">
+                                                    {{ $dep->created_at }}
+                                                </td>
+                                                <td class="text-muted px-4 py-3 align-middle border-top-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="dropdown ms-4">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" role="tablist"
+                                                                width="20" id="dropdownMenuButton{{ $loop->iteration }}"
+                                                                data-bs-toggle="dropdown" aria-expanded="false"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                                            </svg>
+                                                            <ul class="dropdown-menu"
+                                                                aria-labelledby="dropdownMenuButton{{ $loop->iteration }}">
+                                                                <li><a class="dropdown-item approvebtn"
+                                                                        data-data='{{ json_encode($dep) }}'
+                                                                        href="#">Approve</a></li>
+                                                                <li><a class="dropdown-item rejectbtn"
+                                                                        data-data='{{ json_encode($dep) }}'
+                                                                        href="#">Reject</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <!-- Pagination -->
                                 <div class="d-flex justify-content-center  pt-3">
                                     {{ $withdrawals->links('pagination::bootstrap-4') }}
                                 </div>
@@ -101,54 +91,56 @@
     </div>
 
 
-    <div class="modal fade" id="rejectDepositModal" tabindex="-1" role="dialog" aria-labelledby="newCatgoryLabel" aria-hidden="true">
+
+
+    <div class="modal fade" id="rejectDepositModal" tabindex="-1" role="dialog" aria-labelledby="newCatgoryLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <div class="modal-body">
-                    <form method="POST" action="/admin/deposit/reject_deposit"  > @csrf
+                    <form method="POST" action="/admin/deposit/reject_deposit"> @csrf
                         <h3>Reject Deposit</h3>
-                        <p class="text-danger" ></p>
-                        <div class="form-group" >
+                        <p class="text-danger"></p>
+                        <div class="form-group">
                             <label for="">State Reason For Rejection</label>
-                            <input type="text" class="form-control" name="remark" >
-                            <input type="hidden" class="form-control" name="id" >
+                            <input type="text" class="form-control" name="remark">
+                            <input type="hidden" class="form-control" name="id">
                         </div>
 
-                        <div class="mt-2 d-flex justify-content-end">  
-                            <button class="btn btn-sm btn-danger" >Reject Deposit</button>
+                        <div class="mt-2 d-flex justify-content-end">
+                            <button class="btn btn-sm btn-danger">Reject Deposit</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
 
 
-    <div class="modal fade" id="approveDepositModal" tabindex="-1" role="dialog" aria-labelledby="newCatgoryLabel" aria-hidden="true">
+
+    <div class="modal fade" id="approveDepositModal" tabindex="-1" role="dialog" aria-labelledby="newCatgoryLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <div class="modal-body">
-                    <form method="POST" action="/admin/withdrawal/approve_withdrawal"  > @csrf
+                    <form method="POST" action="/admin/withdrawal/approve_withdrawal"> @csrf
                         <h3>Approve</h3>
-                        <p class="text-success" ></p>
+                        <p class="text-success"></p>
 
-                        <div class="form-group" >
-                            <input type="hidden" class="form-control" name="id" >
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="id">
                         </div>
-                        
-                        <div class="mt-2 d-flex justify-content-end">  
-                            <button class="btn btn-sm btn-success" >Approve</button>
+
+                        <div class="mt-2 d-flex justify-content-end">
+                            <button class="btn btn-sm btn-success">Approve</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
-    
 @endsection
 
 
@@ -156,7 +148,7 @@
     <script>
         $(function() {
 
-            $('body').on('click', '.rejectbtn', function () {
+            $('body').on('click', '.rejectbtn', function() {
                 data = $(this).data('data');
                 console.log(data);
 
@@ -167,7 +159,7 @@
             })
 
 
-            $('body').on('click', '.approvebtn', function () {
+            $('body').on('click', '.approvebtn', function() {
                 data = $(this).data('data');
                 console.log(data);
 
