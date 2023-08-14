@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
     Route::view('/copy', 'users.copy');
     Route::get('/dashboard', [UserController::class, 'indexU']);
+    Route::get('/how-to-earn', [UserController::class, 'howToIndex']);
     Route::get('/deposit', [UserController::class, 'depositIndex'])->middleware('wallet');
 
 
@@ -75,6 +76,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.' ,'middleware' => ['auth','a
 
     Route::get('/set_price', [SettingsController::class, 'setPriceIndex']);
     Route::post('/set_price', [SettingsController::class, 'updateCoinPrice']);
+    Route::post('/set_wallet', [SettingsController::class, 'setReceivingWalletAddress']);
 
 
     Route::group(['prefix' => 'deposit/' ], function () {

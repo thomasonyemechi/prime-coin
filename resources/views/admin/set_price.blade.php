@@ -33,6 +33,35 @@
                     </div>
                 </div>
 
+
+                <div class="card card-block card-stretch custom-scroll">
+                    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                        <div class="caption">
+                            <h6 class="font-weight-bold text-sm mb-2">Change Receving Wallet Address</h6>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <small>Current Address </small>
+                            <h6 class="fw-bold"> {{$coin->wallet_address}} </h6>
+                            <hr>
+                        </div>
+
+                        <form action="/admin/set_wallet" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="">New Address</label>
+                                <input type="text" name="wallet_address" class="form-control"
+                                    placeholder="Enter wallet address">
+                            </div>
+
+                            <div class="mt-2 d-flex justify-content-end ">
+                                <button class="btn btn-sm  btn-primary">Update Wallet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
 
             <div class="col-lg-8">
@@ -41,7 +70,7 @@
                     <div class="card card-block card-stretch custom-scroll">
                         <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-3">
                             <div class="caption">
-                                <h4 class="font-weight-bold mb-2">Rejected Deposits</h4>
+                                <h4 class="font-weight-bold mb-2">Price chnages</h4>
                             </div>
 
                         </div>

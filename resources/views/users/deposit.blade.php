@@ -118,7 +118,7 @@
 
                             <div class="d-flex justify-content-lg-start">
                                 <input type="text" id="input_field" readonly class="form-control"
-                                    value="TGnKCtgYQgJZGn5EH9xb93aRR8EB6fMxda">
+                                    value="{{$coin->wallet_address}}">
                                 <button class="btn btn-primary" onclick="yourFunction()" type="submit">Copy</button>
                             </div>
 

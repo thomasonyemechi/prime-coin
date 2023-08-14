@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CoinInfo;
 use App\Models\Deposit;
 use App\Models\Earning;
 use App\Models\PriceChange;
@@ -21,10 +22,17 @@ use function Symfony\Component\String\b;
 
 class UserController extends Controller
 {
+    public function howToIndex()
+    {
+        return view('users.how_to');
+    }
+
+
     public function depositIndex()
     {
         $deposits = Deposit::where('user_id', auth()->user()->id)->orderby('id', 'desc')->paginate(10);
-        return view('users.deposit', compact('deposits'));
+        $coin = CoinInfo::first();
+        return view('users.deposit', compact(['deposits', 'coin']));
     }
 
     function indexU()

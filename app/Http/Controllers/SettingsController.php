@@ -26,7 +26,7 @@ class SettingsController extends Controller
         $coin->update([
             'wallet_address' => $request->wallet_address
         ]);
-        return back()->with('sucess', 'Receving wallet address has been updated');
+        return back()->with('success', 'Receving wallet address has been updated');
     }
 
 

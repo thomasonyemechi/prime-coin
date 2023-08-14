@@ -85,19 +85,36 @@
                     <div class="card-body">
 
 
-                        <div class="card border-bottom border-4 border-0 border-warning">
-                            <div class="card-body">
-                               <div class="d-flex justify-content-between align-items-center">
-                                  <div>
-                                     <span>Total Coin Purchase   </span>
-                                  </div>
-                                  <div>
-                                     <span class="counter" style="visibility: visible;"> $ {{ ($price) }} </span>
-                                  </div>
-                               </div>
+                        <div class="row" >
+                            <div class="card border-bottom border-4 border-0 border-warning col-md-6 ">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span>Royalty Strength </span>
+                                        </div>
+                                        <div>
+                                            <span class="counter" style="visibility: visible;"> $ {{ number_format($price) }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                         </div>
 
+
+                            <div class="card border-bottom border-4 border-0 border-success col-md-6">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span>Royalty Benchmark </span>
+                                        </div>
+                                        <div>
+                                            <span class="counter" style="visibility: visible;"> $
+                                                {{ number_format(15000 - $price) }} </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="table-responsive">
                             <table class="table data-table mb-0">
@@ -116,7 +133,7 @@
                                         <tr>
                                             <td> {{ $pur->amount }} USDT </td>
                                             <td> {{ $pur->rate }}/USDT </td>
-                                            <td> $  {{ number_format(1/$pur->rate, 2) }} </td>
+                                            <td> $ {{ number_format(1 / $pur->rate, 2) }} </td>
                                             <td> {{ number_format($pur->amount * $pur->rate, 2) }} PC </td>
                                             <td>
                                                 <div class="badge  bg-success">

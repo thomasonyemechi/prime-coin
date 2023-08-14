@@ -299,6 +299,9 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div>
+                                    <a href="/how-to-earn"  class="btn btn-primary mt-2 py-1" >HOW TO EARN IN PRIME PROJECT</a>
+                                </div>
                             </div>
                         </div>
                     </div>
