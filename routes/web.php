@@ -73,6 +73,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.' ,'middleware' => ['auth','a
     Route::view('/dashboard', 'admin.index');
     Route::view('/deposit/pending', 'admin.all_users');
     Route::view('/manage_deposit', 'admin.manage_deposit');
+    Route::get('/users', [AdminController::class, 'usersIndex']);
 
     Route::get('/set_price', [SettingsController::class, 'setPriceIndex']);
     Route::post('/set_price', [SettingsController::class, 'updateCoinPrice']);

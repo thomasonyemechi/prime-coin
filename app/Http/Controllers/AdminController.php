@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Deposit;
 use App\Models\PriceChange;
+use App\Models\User;
 use App\Models\Wallet;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
@@ -13,42 +14,55 @@ class AdminController extends Controller
 {
     function managePendingDepositIndex()
     {
-        $deposits = Deposit::with(['user:id,username'])->where(['status' => 'pending'])->orderby('id','desc')->paginate(25);
+        $deposits = Deposit::with(['user:id,username'])->where(['status' => 'pending'])->orderby('id', 'desc')->paginate(25);
         return view('admin.pending_deposit', compact('deposits'));
     }
 
-
-    function depositHistoryIndex() 
+    function usersIndex(Request $request)
     {
-        $deposits = Deposit::with(['user:id,username'])->orderby('id','desc')->paginate(25);
+        if ($request->user) {
+            $users = User::with(['spon:id,username'])->where ( 'username', 'LIKE', '%' . $request->user . '%' )->orderby('id', 'desc')->paginate(50);
+        } else {
+            $users = User::with(['spon:id,username'])->where('id', '>', 1)->orderby('id', 'desc')->paginate(50);
+        }
+        return view('admin.users', compact('users'));
+    }
+
+
+    function depositHistoryIndex()
+    {
+        $deposits = Deposit::with(['user:id,username'])->orderby('id', 'desc')->paginate(25);
         return view('admin.deposit_history', compact('deposits'));
     }
 
 
-    function approvedDepositIndex() 
+    function approvedDepositIndex()
     {
-        $deposits = Deposit::with(['user:id,username'])->where([ 'status' => 'approved' ])->orderby('id','desc')->paginate(25);
+        $deposits = Deposit::with(['user:id,username'])->where(['status' => 'approved'])->orderby('id', 'desc')->paginate(25);
         return view('admin.approved_deposit', compact('deposits'));
     }
 
-    function rejectedDepositIndex() 
+    function rejectedDepositIndex()
     {
-        $deposits = Deposit::with(['user:id,username'])->where([ 'status' => 'rejected' ])->orderby('id','desc')->paginate(25);
+        $deposits = Deposit::with(['user:id,username'])->where(['status' => 'rejected'])->orderby('id', 'desc')->paginate(25);
         return view('admin.rejected_deposit', compact('deposits'));
     }
 
 
-    function withdrawHistoryIndex() 
+    function withdrawHistoryIndex()
     {
-        $withdrawal = Withdrawal::with(['user:id,username'])->orderby('id','desc')->paginate(25);
+        $withdrawal = Withdrawal::with(['user:id,username'])->orderby('id', 'desc')->paginate(25);
         return view('admin.withdraw_history', compact('withdrawal'));
     }
 
     function withdrawPendingIndex()
     {
-        $withdrawals = Withdrawal::with(['user:id,username'])->where(['status' => 'pending'])->orderby('id','desc')->paginate(25);
+        $withdrawals = Withdrawal::with(['user:id,username'])->where(['status' => 'pending'])->orderby('id', 'desc')->paginate(25);
         return view('admin.pending_with', compact('withdrawals'));
     }
+
+
+    // function allUsersIndex()
 
 
     function rejectDeposit(Request $request)
@@ -78,7 +92,7 @@ class AdminController extends Controller
         $dep = Deposit::find($request->deposit_id);
 
         /////check if any action has once been take on this deposit
-        if($dep->status != 'pending') {
+        if ($dep->status != 'pending') {
             return back()->with('error', 'This deposit cannot be approved');
         }
 
@@ -111,11 +125,11 @@ class AdminController extends Controller
         $with = Withdrawal::find($request->id);
 
         /////check if any action has once been take on this deposit
-        if($with->status != 'pending') {
+        if ($with->status != 'pending') {
             return back()->with('error', 'This withdrawal request cannot be approved');
         }
 
-        if($with->amount > usdtBalance($with->user_id)) {
+        if ($with->amount > usdtBalance($with->user_id)) {
             return back()->with('error', 'This deposit cannot be approved');
         }
         $with->update([
@@ -135,8 +149,4 @@ class AdminController extends Controller
 
         return back()->with('success', 'Withdrwal has been approved');
     }
-
-
-
-
 }
