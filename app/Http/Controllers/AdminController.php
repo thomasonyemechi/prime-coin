@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminCredit;
 use App\Models\Deposit;
 use App\Models\PriceChange;
 use App\Models\User;
@@ -148,5 +149,44 @@ class AdminController extends Controller
         ]);
 
         return back()->with('success', 'Withdrwal has been approved');
+    }
+
+    function credit()
+    {
+        $credits = AdminCredit::with(['user', 'admin'])->orderby('id', 'desc')->paginate(25);
+        return view('admin.credit_users', compact('credits'));
+    }
+
+    function creditUser(Request $request)
+    {
+        Validator::make($request->all(), [
+            'username' => 'required|string|exists:users,username',
+            'amount' => 'required'
+        ])->validate();
+
+        $user = User::where(['username' => $request->username])->first();
+        if(!$user)
+        {
+            abort(404);
+        }
+
+
+        AdminCredit::create([
+            'amount' => $request->amount,
+            'user_id' => $user->id,
+            'by' => auth()->user()->id
+        ]);
+
+        Wallet::create([
+            'currency' => 'pc',
+            'amount' => $request->amount,
+            'type' => 2,
+            'user_id' => $user->id,
+            'remark' => 'Admin Deposit',
+            'ref_id' => 0000,
+            'action' => 'credit'
+        ]);
+
+        return back()->with('success', 'User has been credited');
     }
 }

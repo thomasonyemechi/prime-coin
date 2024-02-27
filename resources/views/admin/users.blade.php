@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title text-white">Basic Datatable</h4>
+                            <h4 class="card-title text-white">All Users</h4>
                         </div>
                         <div class="d-flex mt-3 ms-4 me-4 justify-content-between">
 
@@ -19,7 +19,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            {!! ($_GET['user']) ? '<p class="mb-2 fw-bold" >Search Result for <b>" '.$_GET['user'].' "</b></p>' : '' !!}
+                            {!! isset($_GET['user']) ? '<p class="mb-2 fw-bold" >Search Result for <b>" '.$_GET['user'].' "</b></p>' : '' !!}
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class="">

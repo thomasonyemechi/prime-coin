@@ -66,6 +66,10 @@
                                     <i class="text-danger fw-bold ">{{ $message }} </i>
                                 @enderror
                             </div>
+                            <div class="d-flex pt-2 justify-content-between" >
+                                <span></span>
+                                <span> <a href="/forgot-password">Forgot Password</a> </span>
+                            </div>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn">Login</button>

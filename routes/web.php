@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,18 +30,25 @@ Route::view('/404', 'errors.notfound');
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/create-account', [AuthController::class, 'createAccount'])->name('create-account');
 Route::post('/access-account', [AuthController::class, 'userLogin'])->name('access-account');
+Route::post('/change_email', [AuthController::class, 'changeEmail'])->middleware('auth');
+Route::view('/email', 'users.change_email');
+
 Route::get('/get_price', [TransactionController::class, 'fetchCoinPriceApi']);
 Route::view('/prime/info', 'info' );
 Route::view('/name', 'main' );
 
 
+Route::get('/forgot-password', function () {
+    return view('forgot-password');
+})->name('password.request');
 
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword'] )->name('password.email');
 
 Route::get('/get_user', [AuthController::class, 'get_user']);
 
 
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'mail_ex']], function () {
     // Route::get('/appointment/all', [AdminController::class, 'allAppointment']);
     Route::view('/copy', 'users.copy');
     Route::get('/dashboard', [UserController::class, 'indexU']);
@@ -63,6 +71,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/trade_spc', [UserController::class, 'tradeSpc'])->name('trade_spc'); //
     Route::post('/buy_primecoin', [UserController::class, 'buyPrimeCoin'])->name('buy_primecoin');
 
+
+    Route::view('/change_password', 'users.change_password'); //
+    Route::post('/change_password', [AuthController::class, 'changePassword']); //
+
+
     Route::post('/make_deposit', [TransactionController::class, 'makeDeposit'])->name('make_deposit');    
 });
 
@@ -73,6 +86,8 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.' ,'middleware' => ['auth','a
     Route::view('/dashboard', 'admin.index');
     Route::view('/deposit/pending', 'admin.all_users');
     Route::view('/manage_deposit', 'admin.manage_deposit');
+    Route::get('/credit', [AdminController::class, 'credit']);
+    Route::post('/credit', [AdminController::class, 'creditUser']);
     Route::get('/users', [AdminController::class, 'usersIndex']);
 
     Route::get('/set_price', [SettingsController::class, 'setPriceIndex']);
